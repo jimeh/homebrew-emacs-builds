@@ -22,7 +22,7 @@ jobs:
           path: tap
       - name: Symlink homebrew tap
         run: |
-          mkdir -p '$(brew --repo)/Library/Taps/jimeh'
+          mkdir -p "$(brew --repo)/Library/Taps/jimeh"
           ln -s "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: brew livecheck
