@@ -14,8 +14,6 @@ jobs:
   update:
     runs-on: macos-10.15
     steps:
-      - name: brew update
-        run: brew update
       - name: Checkout tap repository
         uses: actions/checkout@v2
         with:
@@ -49,9 +47,9 @@ jobs:
         working-directory: builder
       - name: Update Cask formulas
         run: >-
-          builder/bin/emacs-builder cask update
-          --builds-repository jimeh/emacs-builds
-          --templates-dir tap/templates
+          builder/bin/emacs-builder
+          cask --builds-repository jimeh/emacs-builds
+          update --templates-dir tap/templates
           ${{ github.event.inputs.extraArgs }}
           livecheck-results.json
         env:
