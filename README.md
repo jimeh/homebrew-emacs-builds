@@ -20,6 +20,3 @@
     <a href="https://github.com/jimeh/emacs-builds">jimeh/emacs-builds</a>.
   </strong>
 </p>
-
-Please see [jimeh/emacs-builds](https://github.com/jimeh/emacs-builds) for more
-information.
