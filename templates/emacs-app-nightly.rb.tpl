@@ -7,14 +7,14 @@ cask 'emacs-app-nightly' do
   url '{{ .DownloadURL "macOS-10-15.x86_64" }}'
 
   name 'Emacs'
-  desc 'GNU Emacs text editor'
+  desc 'GNU Emacs text editor (nightly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
     strategy :git do |tags|
       tags.map do |tag|
-        tag.gsub(/^Emacs.(\d{4}-\d{2}-\d{2}\.\w+\.master)$/i, '\\1')
+        tag.gsub(/^Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.master)$/i, '\\1')
       end.compact
     end
   end
