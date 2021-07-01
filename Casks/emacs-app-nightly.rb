@@ -36,6 +36,7 @@ cask 'emacs-app-nightly' do
 
   depends_on macos: '>= :catalina'
   depends_on arch: :intel
+  depends_on formula: 'gcc'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
