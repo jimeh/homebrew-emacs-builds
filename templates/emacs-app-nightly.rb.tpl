@@ -14,7 +14,10 @@ cask 'emacs-app-nightly' do
     url 'https://github.com/jimeh/emacs-builds.git'
     strategy :git do |tags|
       tags.map do |tag|
-        tag.gsub(/^Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.master)$/i, '\\1')
+        m = /^Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.master)$/.match(tag)
+        next unless m
+
+        m[1]
       end.compact
     end
   end
@@ -22,6 +25,7 @@ cask 'emacs-app-nightly' do
   conflicts_with(
     cask: %w[
       emacs-app
+      emacs-app-good
       emacs
       emacs-nightly
       emacs-pretest
