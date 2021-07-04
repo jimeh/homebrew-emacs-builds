@@ -20,3 +20,14 @@
     <a href="https://github.com/jimeh/emacs-builds">jimeh/emacs-builds</a>.
   </strong>
 </p>
+
+## Casks
+
+The following Homebrew Casks are provided by this Homebrew Tap:
+
+- `emacs-app` — Latest official release of Emacs.
+- `emacs-app-nightly` — Latest nightly build of Emacs.
+- `emacs-app-good` — Latest "known good" nightly build of Emacs, as tracked by
+  [jimeh/emacs-builds#7](https://github.com/jimeh/emacs-builds/issues/7).
+
+[emacs-builds]: https://github.com/jimeh/emacs-builds
