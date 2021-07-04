@@ -1,0 +1,99 @@
+{
+  "token": "emacs-app-nightly",
+  "full_token": "jimeh/emacs-builds/emacs-app-nightly",
+  "tap": "jimeh/emacs-builds",
+  "name": [
+    "Emacs"
+  ],
+  "desc": "GNU Emacs text editor (nightly build)",
+  "homepage": "https://github.com/jimeh/emacs-builds",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2021-07-03.0aee54a.master/Emacs.2021-07-03.0aee54a.master.macOS-10-15.x86_64.dmg",
+  "appcast": null,
+  "version": "2021-07-03.0aee54a.master",
+  "installed": null,
+  "outdated": false,
+  "sha256": "26cfdc13f915666a5ec982480a43b1bd7a9d9f3f318c507519a4a2f06929bae1",
+  "artifacts": [
+    [
+      "Emacs.app"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/MacOS/bin/etags"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
+      {
+        "target": "$(brew --prefix)/include/emacs-module.h"
+      }
+    ],
+    [
+      "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
+      {
+        "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
+      }
+    ],
+    [
+      "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
+    ],
+    [
+      "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
+    ],
+    {
+      "trash": [
+        "~/Library/Caches/org.gnu.Emacs",
+        "~/Library/Preferences/org.gnu.Emacs.plist",
+        "~/Library/Saved Application State/org.gnu.Emacs.savedState"
+      ],
+      "signal": {}
+    }
+  ],
+  "caveats": null,
+  "depends_on": {
+    "macos": {
+      ">=": [
+        "10.15"
+      ]
+    },
+    "arch": [
+      {
+        "type": "intel",
+        "bits": 64
+      }
+    ],
+    "formula": [
+      "gcc"
+    ]
+  },
+  "conflicts_with": {
+    "cask": [
+      "emacs-app",
+      "emacs-app-good",
+      "emacs",
+      "emacs-nightly",
+      "emacs-pretest",
+      "emacs-mac",
+      "emacs-mac-spacemacs-icon"
+    ],
+    "formula": [
+      "emacs",
+      "emacs-mac"
+    ]
+  },
+  "container": null,
+  "auto_updates": null
+}
