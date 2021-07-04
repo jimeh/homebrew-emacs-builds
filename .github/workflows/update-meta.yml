@@ -1,6 +1,7 @@
 ---
 name: Update Meta
 on: [push]
+concurrency: jimeh/homebrew-emacs-builds/update-meta
 
 jobs:
   update-meta:
