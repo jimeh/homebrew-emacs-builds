@@ -1,5 +1,6 @@
 ---
 name: Update Casks
+concurrency: jimeh/homebrew-emacs-builds/update-casks
 on:
   schedule:
     - cron: "0 3 * * *"
@@ -59,3 +60,39 @@ jobs:
           livecheck-results.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-meta:
+    runs-on: macos-10.15
+    needs: [update-casks]
+    steps:
+      - name: Checkout tap repository main branch
+        uses: actions/checkout@v2
+        with:
+          path: tap
+      - name: Symlink homebrew tap
+        run: |
+          mkdir -p "$(brew --repo)/Library/Taps/jimeh"
+          ln -s "${{ github.workspace }}/tap" \
+             "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
+      - name: Checkout tap repository meta branch
+        uses: actions/checkout@v2
+        with:
+          ref: meta
+          path: meta
+      - name: Install meta dependencies
+        run: brew bundle
+        working-directory: meta
+      - name: Update meta files
+        run: make update
+        working-directory: meta
+      - name: commit and push changes to meta branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(meta): update meta files"
+          repository: meta
+          branch: meta
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: >-
+            github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          skip_dirty_check: false
