@@ -35,7 +35,6 @@ cask 'emacs-app-good' do
   )
 
   depends_on macos: '>= :catalina'
-  depends_on arch: :intel
   depends_on formula: 'gcc'
 
   app 'Emacs.app'
