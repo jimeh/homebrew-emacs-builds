@@ -69,12 +69,6 @@
         "10.15"
       ]
     },
-    "arch": [
-      {
-        "type": "intel",
-        "bits": 64
-      }
-    ],
     "formula": [
       "gcc"
     ]
