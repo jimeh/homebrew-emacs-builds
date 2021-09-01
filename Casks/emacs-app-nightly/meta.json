@@ -7,12 +7,12 @@
   ],
   "desc": "GNU Emacs text editor (nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2021-08-30.a1887cc.master/Emacs.2021-08-30.a1887cc.master.macOS-10-15.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2021-08-31.8761d30.master/Emacs.2021-08-31.8761d30.master.macOS-10-15.x86_64.dmg",
   "appcast": null,
-  "version": "2021-08-30.a1887cc.master",
+  "version": "2021-08-31.8761d30.master",
   "installed": null,
   "outdated": false,
-  "sha256": "02665d834b98b75417b0a0a12f114c55d199b4a1cee68fac4f8fad909b9d50a4",
+  "sha256": "15efc0d319edc159f8d868443b2332285b865736852840cfbfd4946e86707cfe",
   "artifacts": [
     [
       "Emacs.app"
