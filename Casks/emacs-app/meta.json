@@ -10,6 +10,7 @@
   "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-27.2/Emacs.2021-03-19.deef5ef.emacs-27-2.macOS-10-15.x86_64.dmg",
   "appcast": null,
   "version": "27.2",
+  "versions": {},
   "installed": null,
   "outdated": false,
   "sha256": "992fd61e936b4d01b6d84ad7dd87af338504d89a0a94e6eaf3570042d463f8ec",
