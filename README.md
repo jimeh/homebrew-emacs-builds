@@ -21,6 +21,12 @@
   </strong>
 </p>
 
+## Install Tap
+
+```
+brew tap jimeh/emacs-builds
+```
+
 ## Casks
 
 The following Homebrew Casks are provided by this Homebrew Tap:
