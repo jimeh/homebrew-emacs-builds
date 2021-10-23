@@ -3,8 +3,8 @@
 cask 'emacs-app-good' do
   version '{{ .Version }}'
 
-  sha256 '{{ .SHA256 "macOS-10-15.x86_64" }}'
-  url '{{ .DownloadURL "macOS-10-15.x86_64" }}'
+  sha256 '{{ .SHA256 "macOS-10-15" "x86_64" }}'
+  url '{{ .DownloadURL "macOS-10-15" "x86_64" }}'
 
   name 'Emacs'
   desc 'GNU Emacs text editor (known good nightly build)'
