@@ -26,7 +26,8 @@
 The following Homebrew Casks are provided by this Homebrew Tap:
 
 - `emacs-app` — Latest official release of Emacs.
-- `emacs-app-nightly` — Latest nightly build of Emacs.
+- `emacs-app-nightly` — Latest nightly build of Emacs' `master` branch.
+- `emacs-app-nightly-28` — Latest nightly build of Emacs' `emacs-28` branch.
 - `emacs-app-good` — Latest "known good" nightly build of Emacs, as tracked by
   [jimeh/emacs-builds#7](https://github.com/jimeh/emacs-builds/issues/7).
 
