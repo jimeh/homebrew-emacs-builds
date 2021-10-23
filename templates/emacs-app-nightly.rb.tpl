@@ -25,6 +25,7 @@ cask 'emacs-app-nightly' do
   conflicts_with(
     cask: %w[
       emacs-app
+      emacs-app-nightly-28
       emacs-app-good
       emacs
       emacs-nightly

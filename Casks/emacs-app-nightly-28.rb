@@ -1,28 +1,32 @@
 # frozen_string_literal: true
 
-cask 'emacs-app-good' do
-  version '{{ .Version }}'
+cask 'emacs-app-nightly-28' do
+  version '2021-10-22.efdffd8.emacs-28'
 
-  sha256 '{{ .SHA256 "macOS-10-15" "x86_64" }}'
-  url '{{ .DownloadURL "macOS-10-15" "x86_64" }}'
+  sha256 'f56ed51454ffa74076d8ea176a9fc00a673c64b092a590e7a8520af4e2fcbc00'
+  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2021-10-22.efdffd8.emacs-28/Emacs.2021-10-22.efdffd8.emacs-28.macOS-10-15.x86_64.dmg'
 
   name 'Emacs'
-  desc 'GNU Emacs text editor (known good nightly build)'
+  desc 'GNU Emacs text editor (nightly build of emacs-28 branch)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
   livecheck do
-    url 'https://github.com/jimeh/emacs-builds/issues/7'
-    strategy :page_match do |page|
-      page.scan(%r{href=.*?https://github\.com/jimeh/emacs-builds/releases/tag/Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.master)}i)
-          .map { |match| match&.first }
+    url 'https://github.com/jimeh/emacs-builds.git'
+    strategy :git do |tags|
+      tags.map do |tag|
+        m = /^Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.emacs-28)$/.match(tag)
+        next unless m
+
+        m[1]
+      end.compact
     end
   end
 
   conflicts_with(
     cask: %w[
-      emacs-app-nightly
-      emacs-app-nightly-28
       emacs-app
+      emacs-app-nightly
+      emacs-app-good
       emacs
       emacs-nightly
       emacs-pretest
