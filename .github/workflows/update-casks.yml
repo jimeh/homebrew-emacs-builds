@@ -6,6 +6,10 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
+      cask:
+        description: "Specific cask to update (all if empty)"
+        required: false
+        default: ""
       extraArgs:
         description: "Extra arguments passed to emacs-builder cask update"
         required: false
@@ -25,9 +29,16 @@ jobs:
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
           ln -s "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
-      - name: brew livecheck
+      - name: brew livecheck (all casks)
+        if: ${{ github.event.inputs.cask == '' }}
         run: >-
           brew livecheck --json --quiet --tap jimeh/emacs-builds
+          | tee livecheck-results.json
+      - name: brew livecheck (specific cask)
+        if: ${{ github.event.inputs.cask != '' }}
+        run: >-
+          brew livecheck --json --quiet
+          jimeh/emacs-builds/${{ github.event.inputs.cask }}
           | tee livecheck-results.json
       - name: Upload livecheck-results.json artifact
         uses: actions/upload-artifact@v2
