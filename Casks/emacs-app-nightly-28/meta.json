@@ -1,19 +1,19 @@
 {
-  "token": "emacs-app",
-  "full_token": "jimeh/emacs-builds/emacs-app",
+  "token": "emacs-app-nightly-28",
+  "full_token": "jimeh/emacs-builds/emacs-app-nightly-28",
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
   ],
-  "desc": "GNU Emacs text editor",
+  "desc": "GNU Emacs text editor (nightly build of emacs-28 branch)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-27.2/Emacs.2021-03-19.deef5ef.emacs-27-2.macOS-10-15.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2021-10-22.efdffd8.emacs-28/Emacs.2021-10-22.efdffd8.emacs-28.macOS-10-15.x86_64.dmg",
   "appcast": null,
-  "version": "27.2",
+  "version": "2021-10-22.efdffd8.emacs-28",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "992fd61e936b4d01b6d84ad7dd87af338504d89a0a94e6eaf3570042d463f8ec",
+  "sha256": "f56ed51454ffa74076d8ea176a9fc00a673c64b092a590e7a8520af4e2fcbc00",
   "artifacts": [
     [
       "Emacs.app"
@@ -70,17 +70,14 @@
         "10.15"
       ]
     },
-    "arch": [
-      {
-        "type": "intel",
-        "bits": 64
-      }
+    "formula": [
+      "gcc"
     ]
   },
   "conflicts_with": {
     "cask": [
+      "emacs-app",
       "emacs-app-nightly",
-      "emacs-app-nightly-28",
       "emacs-app-good",
       "emacs",
       "emacs-nightly",

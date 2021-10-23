@@ -77,6 +77,7 @@
   "conflicts_with": {
     "cask": [
       "emacs-app",
+      "emacs-app-nightly-28",
       "emacs-app-good",
       "emacs",
       "emacs-nightly",
