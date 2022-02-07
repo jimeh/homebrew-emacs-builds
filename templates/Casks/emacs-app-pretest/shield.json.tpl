@@ -5,5 +5,5 @@
   namedLogo: "GNU Emacs",
   logoColor: "white",
   label: "pretest",
-  message: .version
+  message: ("v" + .version)
 }
