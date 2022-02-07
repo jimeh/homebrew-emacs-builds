@@ -40,7 +40,6 @@ cask 'emacs-app' do
   )
 
   depends_on macos: '>= :catalina'
-  depends_on arch: :intel
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
