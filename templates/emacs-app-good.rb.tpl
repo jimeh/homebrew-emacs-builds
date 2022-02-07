@@ -36,7 +36,6 @@ cask 'emacs-app-good' do
   )
 
   depends_on macos: '>= :catalina'
-  depends_on formula: 'gcc'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
