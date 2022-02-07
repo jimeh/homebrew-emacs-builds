@@ -1,19 +1,19 @@
 {
-  "token": "emacs-app",
-  "full_token": "jimeh/emacs-builds/emacs-app",
+  "token": "emacs-app-pretest",
+  "full_token": "jimeh/emacs-builds/emacs-app-pretest",
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
   ],
-  "desc": "GNU Emacs text editor",
+  "desc": "GNU Emacs text editor (latest pretest)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-27.2/Emacs.2021-03-19.deef5ef.emacs-27-2.macOS-10-15.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.0.91-pretest/Emacs.2022-01-08.d193801.emacs-28-0-91-pretest.macOS-10-15.x86_64.dmg",
   "appcast": null,
-  "version": "27.2",
+  "version": "28.0.91-pretest",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "992fd61e936b4d01b6d84ad7dd87af338504d89a0a94e6eaf3570042d463f8ec",
+  "sha256": "d2cae876b2a6f58a9a6af52244a8693f1d4a5c0669f402debefaf184b44225b8",
   "artifacts": [
     [
       "Emacs.app"
@@ -73,10 +73,10 @@
   },
   "conflicts_with": {
     "cask": [
+      "emacs-app",
       "emacs-app-good",
       "emacs-app-nightly",
       "emacs-app-nightly-28",
-      "emacs-app-pretest",
       "emacs",
       "emacs-nightly",
       "emacs-pretest",
