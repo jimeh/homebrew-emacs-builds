@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-cask 'emacs-app-nightly-28' do
-  version '{{ .Version }}'
+cask 'emacs-app-pretest' do
+  version '28.0.90-pretest'
 
-  sha256 '{{ .SHA256 "macOS-10-15" "x86_64" }}'
-  url '{{ .DownloadURL "macOS-10-15" "x86_64" }}'
+  sha256 'c49633fdd23365f1a5df551365d84cede37de983dcaa788c4b6ce10bf659fc87'
+  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.0.90-pretest/Emacs.2021-12-01.f38dfa5.emacs-28-0-90-pretest.macOS-10-15.x86_64.dmg'
 
   name 'Emacs'
-  desc 'GNU Emacs text editor (nightly build of emacs-28 branch)'
+  desc 'GNU Emacs text editor (latest pretest)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
     strategy :git do |tags|
       tags.map do |tag|
-        m = /^Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.emacs-28)$/.match(tag)
+        m = /^Emacs-(.+-pretest)$/.match(tag)
         next unless m
 
         m[1]
@@ -27,7 +27,7 @@ cask 'emacs-app-nightly-28' do
       emacs-app
       emacs-app-good
       emacs-app-nightly
-      emacs-app-pretest
+      emacs-app-nightly-28
       emacs
       emacs-nightly
       emacs-pretest
