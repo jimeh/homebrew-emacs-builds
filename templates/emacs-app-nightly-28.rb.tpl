@@ -3,8 +3,8 @@
 cask 'emacs-app-nightly-28' do
   version '{{ .Version }}'
 
-  sha256 '{{ .SHA256 "macOS-10-15" "x86_64" }}'
-  url '{{ .DownloadURL "macOS-10-15" "x86_64" }}'
+  sha256 '{{ .SHA256 "macOS-11" "x86_64" }}'
+  url '{{ .DownloadURL "macOS-11" "x86_64" }}'
 
   name 'Emacs'
   desc 'GNU Emacs text editor (nightly build of emacs-28 branch)'
@@ -40,7 +40,7 @@ cask 'emacs-app-nightly-28' do
     ]
   )
 
-  depends_on macos: '>= :catalina'
+  depends_on macos: '>= :big_sur'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
