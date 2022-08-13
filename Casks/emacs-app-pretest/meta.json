@@ -7,13 +7,13 @@
   ],
   "desc": "GNU Emacs text editor (latest pretest)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.0.92-pretest/Emacs.2022-03-12.5ba9c8c.emacs-28-0-92-pretest.macOS-10-15.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.1.90-pretest/Emacs.2022-06-29.f1de6c0.emacs-28-1-90-pretest.macOS-11.x86_64.dmg",
   "appcast": null,
-  "version": "28.0.92-pretest",
+  "version": "28.1.90-pretest",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "c3c1d30b8a4ceadb4985098fcf4e4d40db85320d733c68f1c75b4ece85b7f461",
+  "sha256": "3af04b7aa7c63b3cb88b4e2837e879ec3209c2fe4e8006a445bae53f67887960",
   "artifacts": [
     [
       "Emacs.app"
