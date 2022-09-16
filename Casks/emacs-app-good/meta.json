@@ -15,52 +15,77 @@
   "outdated": false,
   "sha256": "eb375ffcf52696b2b6739c2c53a01d9582f5fb190166d5ba7cfe456aba6971b8",
   "artifacts": [
-    [
-      "Emacs.app"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/etags"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
-      {
-        "target": "$(brew --prefix)/include/emacs-module.h"
-      }
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
-      {
-        "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
-      }
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
-    ],
     {
-      "trash": [
-        "~/Library/Caches/org.gnu.Emacs",
-        "~/Library/Preferences/org.gnu.Emacs.plist",
-        "~/Library/Saved Application State/org.gnu.Emacs.savedState"
-      ],
-      "signal": {}
+      "app": [
+        "Emacs.app"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/etags"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
+        {
+          "target": "$(brew --prefix)/include/emacs-module.h"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
+        {
+          "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
+        }
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
+      ]
+    },
+    {
+      "zap": [
+        {
+          "trash": [
+            "~/Library/Caches/org.gnu.Emacs",
+            "~/Library/Preferences/org.gnu.Emacs.plist",
+            "~/Library/Saved Application State/org.gnu.Emacs.savedState"
+          ]
+        }
+      ]
     }
   ],
   "caveats": null,

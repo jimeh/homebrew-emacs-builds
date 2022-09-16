@@ -7,60 +7,85 @@
   ],
   "desc": "GNU Emacs text editor (nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2022-09-14.30ca49c.master/Emacs.2022-09-14.30ca49c.master.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2022-09-15.45459fd.master/Emacs.2022-09-15.45459fd.master.macOS-11.x86_64.dmg",
   "appcast": null,
-  "version": "2022-09-14.30ca49c.master",
+  "version": "2022-09-15.45459fd.master",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "5e3f5494bfac5fb2ca413cd28ac9dc817b1ec1af782fcb835731b2b42eb2201e",
+  "sha256": "747be7a771767d9cec29cc8edefc553e52d5566014fd249782e4771d9de7568f",
   "artifacts": [
-    [
-      "Emacs.app"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/MacOS/bin/etags"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
-      {
-        "target": "$(brew --prefix)/include/emacs-module.h"
-      }
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
-      {
-        "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
-      }
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
-    ],
-    [
-      "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
-    ],
     {
-      "trash": [
-        "~/Library/Caches/org.gnu.Emacs",
-        "~/Library/Preferences/org.gnu.Emacs.plist",
-        "~/Library/Saved Application State/org.gnu.Emacs.savedState"
-      ],
-      "signal": {}
+      "app": [
+        "Emacs.app"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/MacOS/bin/etags"
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
+        {
+          "target": "$(brew --prefix)/include/emacs-module.h"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
+        {
+          "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
+        }
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
+      ]
+    },
+    {
+      "manpage": [
+        "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
+      ]
+    },
+    {
+      "zap": [
+        {
+          "trash": [
+            "~/Library/Caches/org.gnu.Emacs",
+            "~/Library/Preferences/org.gnu.Emacs.plist",
+            "~/Library/Saved Application State/org.gnu.Emacs.savedState"
+          ]
+        }
+      ]
     }
   ],
   "caveats": null,
