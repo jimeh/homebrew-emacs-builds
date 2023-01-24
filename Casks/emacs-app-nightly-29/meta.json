@@ -1,19 +1,19 @@
 {
-  "token": "emacs-app-nightly",
-  "full_token": "jimeh/emacs-builds/emacs-app-nightly",
+  "token": "emacs-app-nightly-29",
+  "full_token": "jimeh/emacs-builds/emacs-app-nightly-29",
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
   ],
-  "desc": "GNU Emacs text editor (nightly build)",
+  "desc": "GNU Emacs text editor (nightly build of emacs-29 branch)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-01-23.29a8a18.master/Emacs.2023-01-23.29a8a18.master.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-01-23.c15c0f7.emacs-29/Emacs.2023-01-23.c15c0f7.emacs-29.macOS-11.x86_64.dmg",
   "appcast": null,
-  "version": "2023-01-23.29a8a18.master",
+  "version": "2023-01-23.c15c0f7.emacs-29",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "1c3ae91616ba636164a717e9374276b589113bdbd2fcd8fd7198e42acfe728b9",
+  "sha256": "f2faf33b3784898989b7bd1c3cb7e87fc032a04c816ad7f9a863f5fc0af13e42",
   "artifacts": [
     {
       "app": [
@@ -100,8 +100,8 @@
     "cask": [
       "emacs-app",
       "emacs-app-good",
+      "emacs-app-nightly",
       "emacs-app-nightly-28",
-      "emacs-app-nightly-29",
       "emacs-app-pretest",
       "emacs",
       "emacs-nightly",
