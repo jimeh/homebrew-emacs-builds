@@ -23,6 +23,7 @@ cask 'emacs-app-good' do
       emacs-app
       emacs-app-nightly
       emacs-app-nightly-28
+      emacs-app-nightly-29
       emacs-app-pretest
       emacs
       emacs-nightly

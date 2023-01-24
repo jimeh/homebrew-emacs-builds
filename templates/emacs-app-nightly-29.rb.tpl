@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-cask 'emacs-app-pretest' do
-  version '28.1.91-pretest'
+cask 'emacs-app-nightly-29' do
+  version '{{ .Version }}'
 
-  sha256 '0ce386b1a30402b8db794670e5c94a5f5dbb249337559f030e6aa13f09a6d89e'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.1.91-pretest/Emacs.2022-08-01.e6af496.emacs-28-1-91-pretest.macOS-11.x86_64.dmg'
+  sha256 '{{ .SHA256 "macOS-11" "x86_64" }}'
+  url '{{ .DownloadURL "macOS-11" "x86_64" }}'
 
   name 'Emacs'
-  desc 'GNU Emacs text editor (latest pretest)'
+  desc 'GNU Emacs text editor (nightly build of emacs-29 branch)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
     strategy :git do |tags|
       tags.map do |tag|
-        m = /^Emacs-(.+-pretest)$/.match(tag)
+        m = /^Emacs\.(\d{4}-\d{2}-\d{2}\.\w+\.emacs-29)$/.match(tag)
         next unless m
 
         m[1]
@@ -28,7 +28,7 @@ cask 'emacs-app-pretest' do
       emacs-app-good
       emacs-app-nightly
       emacs-app-nightly-28
-      emacs-app-nightly-29
+      emacs-app-pretest
       emacs
       emacs-nightly
       emacs-pretest
@@ -41,7 +41,7 @@ cask 'emacs-app-pretest' do
     ]
   )
 
-  depends_on macos: '>= :catalina'
+  depends_on macos: '>= :big_sur'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
