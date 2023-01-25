@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/jimeh/homebrew-emacs-builds/actions">
-    <img alt="Build status" src="https://img.shields.io/github/workflow/status/jimeh/homebrew-emacs-builds/Update%20Casks.svg?style=flat&label=build&logo=github&logoColor=white">
+    <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/jimeh/homebrew-emacs-builds/update-casks.yml?style=flat&label=build&logo=github&logoColor=white">
   </a>
   <a href="https://github.com/jimeh/homebrew-emacs-builds/issues">
     <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/jimeh/homebrew-emacs-builds?style=flat&logo=github">
