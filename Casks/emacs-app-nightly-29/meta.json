@@ -7,13 +7,13 @@
   ],
   "desc": "GNU Emacs text editor (nightly build of emacs-29 branch)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-02-20.5d0b45c.emacs-29/Emacs.2023-02-20.5d0b45c.emacs-29.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-02-21.fb5dbf6.emacs-29/Emacs.2023-02-21.fb5dbf6.emacs-29.macOS-11.x86_64.dmg",
   "appcast": null,
-  "version": "2023-02-20.5d0b45c.emacs-29",
+  "version": "2023-02-21.fb5dbf6.emacs-29",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "abc7115bc788bc2135897faa6d99911c02e0597eb7aa6f793d5eea3df2a7cfa6",
+  "sha256": "b3532fb2433be81ee0903a4e96769311f854059c342cbbd97cc023e29d2b4f1c",
   "artifacts": [
     {
       "app": [
@@ -44,7 +44,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
         {
-          "target": "$(brew --prefix)/include/emacs-module.h"
+          "target": "/usr/local/include/emacs-module.h"
         }
       ]
     },
@@ -52,7 +52,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
         {
-          "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
+          "target": "/usr/local/share/emacs/site-lisp/subdirs.el"
         }
       ]
     },
@@ -116,6 +116,6 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "f2ad8f356173b0a32e3f0cd38a6b6a6f6717730a",
+  "tap_git_head": "a40093e3412c71858c58ebe061a9d003bf4a2b62",
   "languages": []
 }

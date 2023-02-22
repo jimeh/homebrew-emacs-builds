@@ -44,7 +44,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
         {
-          "target": "$(brew --prefix)/include/emacs-module.h"
+          "target": "/usr/local/include/emacs-module.h"
         }
       ]
     },
@@ -52,7 +52,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
         {
-          "target": "$(brew --prefix)/share/emacs/site-lisp/subdirs.el"
+          "target": "/usr/local/share/emacs/site-lisp/subdirs.el"
         }
       ]
     },
@@ -116,6 +116,6 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "f2ad8f356173b0a32e3f0cd38a6b6a6f6717730a",
+  "tap_git_head": "a40093e3412c71858c58ebe061a9d003bf4a2b62",
   "languages": []
 }
