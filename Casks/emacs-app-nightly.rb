@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 cask 'emacs-app-nightly' do
-  version '2023-02-26.6c4abba.master'
+  version '2023-02-27.93f557a.master'
 
-  sha256 '25659b7f8457545e47d31c6ccb5f319c7b089b236e7a279cbb5e8613f3051aff'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-02-26.6c4abba.master/Emacs.2023-02-26.6c4abba.master.macOS-11.x86_64.dmg'
+  sha256 'ab60df5074dcea2827e95e02a62ecd76170d9a940b0b339927652e15a76e6edc'
+  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-02-27.93f557a.master/Emacs.2023-02-27.93f557a.master.macOS-11.x86_64.dmg'
 
   name 'Emacs'
   desc 'GNU Emacs text editor (nightly build)'
