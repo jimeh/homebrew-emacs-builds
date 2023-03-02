@@ -7,13 +7,13 @@
   ],
   "desc": "GNU Emacs text editor (nightly build of emacs-29 branch)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-02-28.48a0804.emacs-29/Emacs.2023-02-28.48a0804.emacs-29.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-03-01.59365f9.emacs-29/Emacs.2023-03-01.59365f9.emacs-29.macOS-11.x86_64.dmg",
   "appcast": null,
-  "version": "2023-02-28.48a0804.emacs-29",
+  "version": "2023-03-01.59365f9.emacs-29",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "ce1eaca904ff792b01f1adb183311708268e9d92a3d095acade5d7f0d57051ae",
+  "sha256": "c702e26223b542e8c015eec1b2b3c7a95fc9003ae3802fa7ce357acfeaab1a0d",
   "artifacts": [
     {
       "app": [
@@ -116,6 +116,6 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "316fc4d8eec0411f264685ab1c8ea20b854bdc5e",
+  "tap_git_head": "5443a428372eeab3d50863829d4bd6b41e65a6ef",
   "languages": []
 }
