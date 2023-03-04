@@ -7,13 +7,13 @@
   ],
   "desc": "GNU Emacs text editor (nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-03-01.4b99015.master/Emacs.2023-03-01.4b99015.master.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-03-03.7f740b8.master/Emacs.2023-03-03.7f740b8.master.macOS-11.x86_64.dmg",
   "appcast": null,
-  "version": "2023-03-01.4b99015.master",
+  "version": "2023-03-03.7f740b8.master",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "2eb4747959b8cc4aef7a8ed9d55035c4017f88ececa69df823c6ca1b9c4c60a9",
+  "sha256": "0ac827d893b518918df9435850327773c1e8366119479db542964ab71f963334",
   "artifacts": [
     {
       "app": [
@@ -116,6 +116,6 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "b2c11da97a2c672d4950efb7321cf2dda2aeaaa2",
+  "tap_git_head": "038fbadc4e7fc50fbe8e64696b75bf969fcadf67",
   "languages": []
 }
