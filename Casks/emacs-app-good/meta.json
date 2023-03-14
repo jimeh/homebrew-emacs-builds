@@ -8,6 +8,7 @@
   "desc": "GNU Emacs text editor (known good nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
   "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-01-22.8febda4.master/Emacs.2023-01-22.8febda4.master.macOS-11.x86_64.dmg",
+  "url_specs": {},
   "appcast": null,
   "version": "2023-01-22.8febda4.master",
   "versions": {},
@@ -116,6 +117,9 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "ebefb9473bfea7dab6dc48513f90654c74e7b158",
-  "languages": []
+  "tap_git_head": "3d660a22a16d4e43d3baa7574e9959ceef3ab386",
+  "languages": [],
+  "ruby_source_checksum": {
+    "sha256": "7e1ade7c7b17930518a4048b76b5c1a765d8edbeb73678541e70574720231710"
+  }
 }

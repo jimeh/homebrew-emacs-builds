@@ -8,6 +8,7 @@
   "desc": "GNU Emacs text editor",
   "homepage": "https://github.com/jimeh/emacs-builds",
   "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.2/Emacs.2022-09-12.739b5d0.emacs-28-2.macOS-11.x86_64.dmg",
+  "url_specs": {},
   "appcast": null,
   "version": "28.2",
   "versions": {},
@@ -116,6 +117,9 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "ebefb9473bfea7dab6dc48513f90654c74e7b158",
-  "languages": []
+  "tap_git_head": "3d660a22a16d4e43d3baa7574e9959ceef3ab386",
+  "languages": [],
+  "ruby_source_checksum": {
+    "sha256": "28cb11748c3b26b935f3ad0fb2da20014d078bd96cbd7117dcb1c99fa43003aa"
+  }
 }
