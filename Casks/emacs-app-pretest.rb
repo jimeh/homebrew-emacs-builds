@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 cask 'emacs-app-pretest' do
-  version '28.1.91-pretest'
+  version '29.0.90-pretest'
 
-  sha256 '0ce386b1a30402b8db794670e5c94a5f5dbb249337559f030e6aa13f09a6d89e'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.1.91-pretest/Emacs.2022-08-01.e6af496.emacs-28-1-91-pretest.macOS-11.x86_64.dmg'
+  sha256 'c25f16bbc49003ece3bc548d14e028ebd715958aa06050dd1215531028ee8f01'
+  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.0.90-pretest/Emacs.2023-04-10.9b0bf69.emacs-29-0-90-pretest.macOS-11.x86_64.dmg'
 
   name 'Emacs'
   desc 'GNU Emacs text editor (latest pretest)'
