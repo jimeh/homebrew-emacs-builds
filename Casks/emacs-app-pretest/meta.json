@@ -7,14 +7,14 @@
   ],
   "desc": "GNU Emacs text editor (latest pretest)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-28.1.91-pretest/Emacs.2022-08-01.e6af496.emacs-28-1-91-pretest.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.0.90-pretest/Emacs.2023-04-10.9b0bf69.emacs-29-0-90-pretest.macOS-11.x86_64.dmg",
   "url_specs": {},
   "appcast": null,
-  "version": "28.1.91-pretest",
+  "version": "29.0.90-pretest",
   "versions": {},
   "installed": null,
   "outdated": false,
-  "sha256": "0ce386b1a30402b8db794670e5c94a5f5dbb249337559f030e6aa13f09a6d89e",
+  "sha256": "c25f16bbc49003ece3bc548d14e028ebd715958aa06050dd1215531028ee8f01",
   "artifacts": [
     {
       "app": [
@@ -117,9 +117,9 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "b560897f4624f967110629a0543651720d5b9b7a",
+  "tap_git_head": "e43bcf470fa11c9815fbd5e362a8414140f9c0e6",
   "languages": [],
   "ruby_source_checksum": {
-    "sha256": "2515b4fc789288729617c39126e65fd6a5073832ebc7f9d901ab5b2a060dd6c7"
+    "sha256": "c8797a3afce099f84a88dbeaa80928410547a7312836e57379655b377367971e"
   }
 }
