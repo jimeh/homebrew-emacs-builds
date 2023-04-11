@@ -117,7 +117,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "8d5b45d967fc9a3001189ccb18ed6e3d3fb00cc9",
+  "tap_git_head": "b30409927c0afa51197d3ce49b870b2706193c63",
   "languages": [],
   "ruby_source_checksum": {
     "sha256": "e86667035ba8d9403d198add93e1a1e47212be68206bcd1a8e3f9a0c59d37b79"
