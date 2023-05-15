@@ -7,13 +7,13 @@
   ],
   "desc": "GNU Emacs text editor (latest pretest)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.0.90-pretest/Emacs.2023-04-10.9b0bf69.emacs-29-0-90-pretest.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.0.91-pretest/Emacs.2023-05-14.3aef46e.emacs-29-0-91-pretest.macOS-11.x86_64.dmg",
   "url_specs": {},
   "appcast": null,
-  "version": "29.0.90-pretest",
+  "version": "29.0.91-pretest",
   "installed": null,
   "outdated": false,
-  "sha256": "c25f16bbc49003ece3bc548d14e028ebd715958aa06050dd1215531028ee8f01",
+  "sha256": "95fc2844fb7940cd500720e3219c6bcca6e289d49d674215d75246edd891e077",
   "artifacts": [
     {
       "app": [
@@ -116,10 +116,10 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "62683d3d4e58422add048070cb22a87166c41b51",
+  "tap_git_head": "c43380e721f38139841c782b219bb6d27a42b951",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-pretest.rb",
   "ruby_source_checksum": {
-    "sha256": "c8797a3afce099f84a88dbeaa80928410547a7312836e57379655b377367971e"
+    "sha256": "b604cdf97498e604b52a4080859068276b6c9f402f1b85abc6d4e3c58de5a43b"
   }
 }
