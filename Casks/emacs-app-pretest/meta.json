@@ -1,7 +1,6 @@
 {
   "token": "emacs-app-pretest",
   "full_token": "jimeh/emacs-builds/emacs-app-pretest",
-  "old_tokens": [],
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
@@ -13,7 +12,7 @@
   "appcast": null,
   "version": "29.0.91-pretest",
   "installed": null,
-  "outdated": true,
+  "outdated": false,
   "sha256": "95fc2844fb7940cd500720e3219c6bcca6e289d49d674215d75246edd891e077",
   "artifacts": [
     {
