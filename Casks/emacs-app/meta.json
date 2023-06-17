@@ -1,6 +1,7 @@
 {
   "token": "emacs-app",
   "full_token": "jimeh/emacs-builds/emacs-app",
+  "old_tokens": [],
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
@@ -12,7 +13,7 @@
   "appcast": null,
   "version": "28.2",
   "installed": null,
-  "outdated": false,
+  "outdated": true,
   "sha256": "7caadc43289b11219b1427accb5760460f48b676ab886979651e5ed02eb04505",
   "artifacts": [
     {

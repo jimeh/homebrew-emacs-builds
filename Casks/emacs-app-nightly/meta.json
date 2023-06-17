@@ -1,6 +1,7 @@
 {
   "token": "emacs-app-nightly",
   "full_token": "jimeh/emacs-builds/emacs-app-nightly",
+  "old_tokens": [],
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
@@ -12,7 +13,7 @@
   "appcast": null,
   "version": "2023-06-16.8657afa.master",
   "installed": null,
-  "outdated": false,
+  "outdated": true,
   "sha256": "340a5579a35493d5e7c30aafa2e98d8e452efadf3bc9f8055cb3e934776cd66d",
   "artifacts": [
     {
