@@ -1,6 +1,7 @@
 {
   "token": "emacs-app",
   "full_token": "jimeh/emacs-builds/emacs-app",
+  "old_tokens": [],
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
@@ -12,7 +13,7 @@
   "appcast": null,
   "version": "28.2",
   "installed": null,
-  "outdated": false,
+  "outdated": true,
   "sha256": "7caadc43289b11219b1427accb5760460f48b676ab886979651e5ed02eb04505",
   "artifacts": [
     {
@@ -116,7 +117,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "a2dd5051dc2d20699094a37560b2754d2e53b6a0",
+  "tap_git_head": "2e71e9db1790ff5c36f66f092e34a223374a4ca1",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app.rb",
   "ruby_source_checksum": {

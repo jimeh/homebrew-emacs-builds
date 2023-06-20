@@ -1,6 +1,7 @@
 {
   "token": "emacs-app-nightly-28",
   "full_token": "jimeh/emacs-builds/emacs-app-nightly-28",
+  "old_tokens": [],
   "tap": "jimeh/emacs-builds",
   "name": [
     "Emacs"
@@ -12,7 +13,7 @@
   "appcast": null,
   "version": "2022-12-19.ae9bfed.emacs-28",
   "installed": null,
-  "outdated": false,
+  "outdated": true,
   "sha256": "28e611692ed2a09435a3225fa38a550954651cc8f3b116b571bd06b00dce458a",
   "artifacts": [
     {
@@ -116,7 +117,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "a2dd5051dc2d20699094a37560b2754d2e53b6a0",
+  "tap_git_head": "2e71e9db1790ff5c36f66f092e34a223374a4ca1",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly-28.rb",
   "ruby_source_checksum": {
