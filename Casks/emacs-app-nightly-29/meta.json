@@ -8,13 +8,13 @@
   ],
   "desc": "GNU Emacs text editor (nightly build of emacs-29 branch)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-07-11.4cf33b6.emacs-29/Emacs.2023-07-11.4cf33b6.emacs-29.macOS-11.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-07-13.7ac947f.emacs-29/Emacs.2023-07-13.7ac947f.emacs-29.macOS-11.x86_64.dmg",
   "url_specs": {},
   "appcast": null,
-  "version": "2023-07-11.4cf33b6.emacs-29",
+  "version": "2023-07-13.7ac947f.emacs-29",
   "installed": null,
   "outdated": true,
-  "sha256": "4f3015efd88ef8a94c51cf3f21e1cbb9acedafd6146519cb3c337774ac75c8f2",
+  "sha256": "e948e30316457da436d2712154978d353cd02b4f7675ea327e44bb7f7b4bb421",
   "artifacts": [
     {
       "app": [
@@ -117,10 +117,10 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "123cc8d7b634f2c376e500ed7ef56e8880f8939a",
+  "tap_git_head": "ad58538ce16615992dbda21d9008d0460fbe62f2",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly-29.rb",
   "ruby_source_checksum": {
-    "sha256": "daa0755db863ce1a5653cb6ed27b3e7f43d233de5454a3a6c465d8bc07d52bf5"
+    "sha256": "1628a4fd7e9c7562b305d9a0c0ca348b9c3989bbc1ec3e8e8a1623a6b7597cf5"
   }
 }
