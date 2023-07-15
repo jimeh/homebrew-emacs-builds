@@ -13,7 +13,7 @@
   "appcast": null,
   "version": "2023-05-30.ecc1d99.master",
   "installed": null,
-  "outdated": true,
+  "outdated": false,
   "sha256": "4941b57bcab80bf7f5bcdbd3908c6e90bb754c6a37cc98d0b183ed254af65c40",
   "artifacts": [
     {

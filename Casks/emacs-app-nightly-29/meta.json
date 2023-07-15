@@ -13,7 +13,7 @@
   "appcast": null,
   "version": "2023-07-14.ea696ea.emacs-29",
   "installed": null,
-  "outdated": true,
+  "outdated": false,
   "sha256": "3ab214e67069eaaf7bcbe5638cdbd19b37b54b03fb22a872c001b4a7edf30e84",
   "artifacts": [
     {
