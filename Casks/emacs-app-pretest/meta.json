@@ -13,7 +13,7 @@
   "appcast": null,
   "version": "29.0.92-pretest",
   "installed": null,
-  "outdated": true,
+  "outdated": false,
   "sha256": "4150ffaa13e27d4b6c440417bd56c85fd8beb15ac1fea13733d5cbcdd5895135",
   "artifacts": [
     {
@@ -117,7 +117,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "0844f564ed5fbd0fc24ee04ed33ae276426a2a81",
+  "tap_git_head": "cd3a60aace91144367f7612af91b339ad46fee62",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-pretest.rb",
   "ruby_source_checksum": {
