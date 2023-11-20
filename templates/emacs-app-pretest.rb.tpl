@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 cask 'emacs-app-pretest' do
-  version '{{ .Version }}'
-
-  sha256 '{{ .SHA256 "macOS-11" "x86_64" }}'
-  url '{{ .DownloadURL "macOS-11" "x86_64" }}'
-
   name 'Emacs'
   desc 'GNU Emacs text editor (latest pretest)'
   homepage 'https://github.com/jimeh/emacs-builds'
+
+  version '{{ .Version }}'
+{{ template "sources" . }}
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
@@ -26,6 +24,7 @@ cask 'emacs-app-pretest' do
     cask: %w[
       emacs-app
       emacs-app-good
+      emacs-app-monthly
       emacs-app-nightly
       emacs-app-nightly-28
       emacs-app-nightly-29

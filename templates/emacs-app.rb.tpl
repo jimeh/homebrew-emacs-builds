@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 cask 'emacs-app' do
-  version '{{ .Version }}'
-
-  sha256 '{{ .SHA256 "macOS-10-15" "x86_64" }}'
-  url '{{ .DownloadURL "macOS-10-15" "x86_64" }}'
-
   name 'Emacs'
   desc 'GNU Emacs text editor'
   homepage 'https://github.com/jimeh/emacs-builds'
+
+  version '{{ .Version }}'
+{{ template "sources" . }}
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
@@ -25,6 +23,7 @@ cask 'emacs-app' do
   conflicts_with(
     cask: %w[
       emacs-app-good
+      emacs-app-monthly
       emacs-app-nightly
       emacs-app-nightly-28
       emacs-app-nightly-29

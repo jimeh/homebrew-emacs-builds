@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 cask 'emacs-app-nightly' do
-  version '{{ .Version }}'
-
-  sha256 '{{ .SHA256 "macOS-11" "x86_64" }}'
-  url '{{ .DownloadURL "macOS-11" "x86_64" }}'
-
   name 'Emacs'
   desc 'GNU Emacs text editor (nightly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
+
+  version '{{ .Version }}'
+{{ template sources . }}
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
@@ -26,6 +24,7 @@ cask 'emacs-app-nightly' do
     cask: %w[
       emacs-app
       emacs-app-good
+      emacs-app-monthly
       emacs-app-nightly-28
       emacs-app-nightly-29
       emacs-app-pretest
@@ -40,8 +39,6 @@ cask 'emacs-app-nightly' do
       emacs-mac
     ]
   )
-
-  depends_on macos: '>= :big_sur'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
