@@ -26,6 +26,7 @@ cask 'emacs-app-nightly-28' do
     cask: %w[
       emacs-app
       emacs-app-good
+      emacs-app-monthly
       emacs-app-nightly
       emacs-app-nightly-29
       emacs-app-pretest
