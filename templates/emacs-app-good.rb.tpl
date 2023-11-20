@@ -36,8 +36,6 @@ cask 'emacs-app-good' do
     ]
   )
 
-  depends_on macos: '>= :big_sur'
-
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/emacs"

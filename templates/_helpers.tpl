@@ -22,6 +22,6 @@
 {{- else }}
   sha256 '{{ $x86_64SHA }}'
   url '{{ $x86_64URL }}'
-  depends_on macos: '>= :big_sur'
+  depends_on macos: '>= :monterey'
 {{- end }}
 {{- end }}

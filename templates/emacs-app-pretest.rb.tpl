@@ -40,8 +40,6 @@ cask 'emacs-app-pretest' do
     ]
   )
 
-  depends_on macos: '>= :catalina'
-
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/emacs"
