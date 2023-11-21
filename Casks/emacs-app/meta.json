@@ -13,6 +13,7 @@
   "appcast": null,
   "version": "29.1",
   "installed": null,
+  "installed_time": null,
   "outdated": false,
   "sha256": "920485aacb286330857e45eca1605693ec9f26f6436d088051285ce83ff411ec",
   "artifacts": [
