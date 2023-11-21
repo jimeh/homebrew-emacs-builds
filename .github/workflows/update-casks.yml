@@ -70,7 +70,7 @@ jobs:
         run: >-
           bin/emacs-builder
           cask --builds-repository jimeh/emacs-builds
-          update --templates-dir tap/templates
+          update --templates-dir templates
           ${{ github.event.inputs.extraArgs }}
           livecheck-results.json
         env:
