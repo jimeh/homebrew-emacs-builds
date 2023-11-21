@@ -16,14 +16,40 @@ on:
         default: ""
 
 jobs:
-  livecheck:
+  emacs-builder:
     runs-on: macos-12
+    steps:
+      - name: Checkout build-emacs-for-macos repo
+        uses: actions/checkout@v4
+        with:
+          repository: jimeh/build-emacs-for-macos
+          ref: "v0.6.45"
+      - uses: actions/setup-go@v4
+        with:
+          go-version: "1.21"
+      - name: Build emacs-builder tool
+        run: make build
+      - name: Upload emacs-builder artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: emacs-builder
+          path: bin/emacs-builder
+          if-no-files-found: error
+
+  live-check:
+    runs-on: macos-12
+    outputs:
+      tap_sha: ${{ steps.tap_sha.outputs.sha }}
     steps:
       - name: Checkout tap repository
         uses: actions/checkout@v4
         with:
           ref: main
           path: tap
+      - name: Store tap Git SHA
+        id: tap_sha
+        run: |
+          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Symlink homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
@@ -49,18 +75,20 @@ jobs:
 
   update-casks:
     runs-on: macos-12
-    needs: [livecheck]
+    needs: [emacs-builder, live-check]
     steps:
-      - name: Checkout build-emacs-for-macos for emacs-builder tool
+      - name: Checkout tap repository
         uses: actions/checkout@v4
         with:
-          repository: jimeh/build-emacs-for-macos
-          ref: "v0.6.45"
-      - uses: actions/setup-go@v4
+          ref: ${{ needs.live-check.outputs.tap_sha }}
+          path: tap
+      - name: Download pre-built emacs-builder artifact
+        uses: actions/download-artifact@v3
         with:
-          go-version: "1.21"
-      - name: Build emacs-builder tool
-        run: make build
+          name: emacs-builder
+          path: bin
+      - name: Ensure emacs-builder is executable
+        run: chmod +x bin/emacs-builder
       - name: Download livecheck-results.json artifact
         uses: actions/download-artifact@v3
         with:
