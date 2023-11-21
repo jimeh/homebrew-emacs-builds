@@ -17,10 +17,10 @@ on:
 
 jobs:
   update-casks:
-    runs-on: macos-11
+    runs-on: macos-12
     steps:
       - name: Checkout tap repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
           path: tap
@@ -47,25 +47,18 @@ jobs:
           path: livecheck-results.json
           if-no-files-found: error
       - name: Checkout build-emacs-for-macos for emacs-builder tool
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: jimeh/build-emacs-for-macos
-          ref: "v0.6.30"
-          path: builder
-      - uses: actions/setup-go@v2
+          ref: "v0.6.45"
+      - uses: actions/setup-go@v4
         with:
-          go-version: 1.16
-      - uses: actions/cache@v2
-        with:
-          path: ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('builder/**/go.sum') }}
-          restore-keys: ${{ runner.os }}-go-
+          go-version: "1.21"
       - name: Build emacs-builder tool
         run: make build
-        working-directory: builder
       - name: Update casks
         run: >-
-          builder/bin/emacs-builder
+          bin/emacs-builder
           cask --builds-repository jimeh/emacs-builds
           update --templates-dir tap/templates
           ${{ github.event.inputs.extraArgs }}
@@ -74,11 +67,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   update-meta:
-    runs-on: macos-11
+    runs-on: macos-12
     needs: [update-casks]
     steps:
       - name: Checkout tap repository main branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
           path: tap
@@ -88,7 +81,7 @@ jobs:
           ln -s "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: Checkout tap repository meta branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: meta
           path: meta
