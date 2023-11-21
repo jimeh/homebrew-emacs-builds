@@ -100,6 +100,7 @@
   "conflicts_with": {
     "cask": [
       "emacs-app",
+      "emacs-app-monthly",
       "emacs-app-nightly",
       "emacs-app-nightly-28",
       "emacs-app-nightly-29",
@@ -117,10 +118,10 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "f863b314ad0f40c8b6a6f2a2964f792e1e59b09c",
+  "tap_git_head": "75e5dd2c64d28d6ea458c0238fff043d289b7721",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-good.rb",
   "ruby_source_checksum": {
-    "sha256": "3997000ee12cbbab432455aefc5b2617e81a9f09e28642386581397a29c6535e"
+    "sha256": "f8b78d52edf4f16d81fb62ffdcc7b47e06852cca0d958e9ae403779e2d71604c"
   }
 }

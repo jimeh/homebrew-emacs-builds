@@ -101,6 +101,7 @@
     "cask": [
       "emacs-app",
       "emacs-app-good",
+      "emacs-app-monthly",
       "emacs-app-nightly",
       "emacs-app-nightly-28",
       "emacs-app-nightly-29",
@@ -117,10 +118,10 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "f863b314ad0f40c8b6a6f2a2964f792e1e59b09c",
+  "tap_git_head": "75e5dd2c64d28d6ea458c0238fff043d289b7721",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-pretest.rb",
   "ruby_source_checksum": {
-    "sha256": "047828ff847ff3935fbc1dccf54841922b723c937abfba9ce23f52d975a79804"
+    "sha256": "c65fda720f0c0f13148a97b3da67835146bdd912baff7166c0ca2114dff7de7f"
   }
 }
