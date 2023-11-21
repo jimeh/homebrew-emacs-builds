@@ -33,7 +33,7 @@ The following Homebrew Casks are provided by this Homebrew Tap:
 - `emacs-app-good` — Latest "known good" nightly build of Emacs, as tracked by
   [jimeh/emacs-builds#7](https://github.com/jimeh/emacs-builds/issues/7).
 
-## Apple Silison
+## Apple Silicon
 
 As of writing (2023-11-21), only the `emacs-app-monthly` casks includes native
 Apple Silicon builds. The rest are Intel-only, but can run via Rosetta on Apple
