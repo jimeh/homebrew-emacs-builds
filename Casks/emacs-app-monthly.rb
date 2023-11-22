@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 cask 'emacs-app-monthly' do

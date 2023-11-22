@@ -24,4 +24,4 @@
   url '{{ $x86_64URL }}'
   depends_on macos: '>= :monterey'
 {{- end }}
-{{- end }}
+{{- end -}}
