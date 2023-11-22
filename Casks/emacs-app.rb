@@ -1,14 +1,23 @@
 # frozen_string_literal: true
 
 cask 'emacs-app' do
-  version '29.1'
-
-  sha256 '920485aacb286330857e45eca1605693ec9f26f6436d088051285ce83ff411ec'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.1/Emacs.2023-07-30.a9b2822.emacs-29-1.macOS-11.x86_64.dmg'
-
   name 'Emacs'
   desc 'GNU Emacs text editor'
   homepage 'https://github.com/jimeh/emacs-builds'
+
+  version '29.1'
+
+  on_arm do
+    sha256 'af65e90cb77c6995fd06f2248f84bbc09160b1aed9661813958317c2843b9e55'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.1/Emacs.2023-07-30.a9b2822.emacs-29-1.macOS-13.arm64.dmg'
+    depends_on macos: '>= :ventura'
+  end
+
+  on_intel do
+    sha256 '06975a567a038f557f88d865f438aa838a4da3a1771885b747bcd416cb85c67c'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.1/Emacs.2023-07-30.a9b2822.emacs-29-1.macOS-12.x86_64.dmg'
+    depends_on macos: '>= :monterey'
+  end
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
@@ -41,8 +50,6 @@ cask 'emacs-app' do
       emacs-mac
     ]
   )
-
-  depends_on macos: '>= :catalina'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
