@@ -29,9 +29,15 @@ The following Homebrew Casks are provided by this Homebrew Tap:
 - `emacs-app-pretest` — Latest pretest build of Emacs based on pretest git tags.
 - `emacs-app-monthly` — Build of `master` branch updated 1st of each month.
 - `emacs-app-nightly` — Latest nightly build of Emacs' `master` branch.
-- `emacs-app-nightly-29` — Latest nightly build of Emacs' `emacs-29` branch.
 - `emacs-app-good` — Latest "known good" nightly build of Emacs, as tracked by
   [jimeh/emacs-builds#7](https://github.com/jimeh/emacs-builds/issues/7).
+
+### Deprecated
+
+The following Casks are deprecated, and no longer updated:
+
+- `emacs-app-nightly-28` — Nightly builds of Emacs' `emacs-28` branch.
+- `emacs-app-nightly-29` — Nightly builds of Emacs' `emacs-29` branch.
 
 ## Apple Silicon
 
