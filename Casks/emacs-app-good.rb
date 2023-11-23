@@ -1,14 +1,23 @@
 # frozen_string_literal: true
 
 cask 'emacs-app-good' do
-  version '2023-05-30.ecc1d99.master'
-
-  sha256 '4941b57bcab80bf7f5bcdbd3908c6e90bb754c6a37cc98d0b183ed254af65c40'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-05-30.ecc1d99.master/Emacs.2023-05-30.ecc1d99.master.macOS-11.x86_64.dmg'
-
   name 'Emacs'
   desc 'GNU Emacs text editor (known good nightly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
+
+  version '2023-11-19.16ac377.master'
+
+  on_arm do
+    sha256 '1776a451375a512066b86b0e3018efac8e40f58f0a6109393cd3bc30177d77eb'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-11-19.16ac377.master/Emacs.2023-11-19.16ac377.master.macOS-13.arm64.dmg'
+    depends_on macos: '>= :ventura'
+  end
+
+  on_intel do
+    sha256 'ce34dbbd9f3086e58da234eb7ab24c41896c19c54c8fa87a0cde528950b7e039'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-11-19.16ac377.master/Emacs.2023-11-19.16ac377.master.macOS-12.x86_64.dmg'
+    depends_on macos: '>= :monterey'
+  end
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds/issues/7'
@@ -37,8 +46,6 @@ cask 'emacs-app-good' do
       emacs-mac
     ]
   )
-
-  depends_on macos: '>= :big_sur'
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
