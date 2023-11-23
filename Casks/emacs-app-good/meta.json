@@ -13,6 +13,7 @@
   "appcast": null,
   "version": "2023-05-30.ecc1d99.master",
   "installed": null,
+  "installed_time": null,
   "outdated": false,
   "sha256": "4941b57bcab80bf7f5bcdbd3908c6e90bb754c6a37cc98d0b183ed254af65c40",
   "artifacts": [
@@ -118,7 +119,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "76efd1ec4ab7e5e37a2a66e3b465c89d195b7e82",
+  "tap_git_head": "17bfa277d8113253036696b9299ca1c1fd45687a",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-good.rb",
   "ruby_source_checksum": {
