@@ -13,6 +13,7 @@
   "appcast": null,
   "version": "2023-11-24.2ed9c9f.master",
   "installed": null,
+  "installed_time": null,
   "outdated": false,
   "sha256": "6d2b8e2210e810f81a05d12d3f2c1fc810946ce221d971deb790e4d03f450f71",
   "artifacts": [
