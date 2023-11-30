@@ -13,6 +13,7 @@
   "appcast": null,
   "version": "2022-12-19.ae9bfed.emacs-28",
   "installed": null,
+  "installed_time": null,
   "outdated": false,
   "sha256": "28e611692ed2a09435a3225fa38a550954651cc8f3b116b571bd06b00dce458a",
   "artifacts": [
@@ -118,7 +119,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "6ffe44fc47641da40e6dd4167459234abbf2307c",
+  "tap_git_head": "1db441c3cec733d30dbc5140ab4b68387ea507e5",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly-28.rb",
   "ruby_source_checksum": {
