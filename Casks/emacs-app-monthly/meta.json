@@ -13,6 +13,7 @@
   "appcast": null,
   "version": "2023-12-01.eec1142.master",
   "installed": null,
+  "installed_time": null,
   "outdated": false,
   "sha256": "09bbb4e29f6b81a553b2b2dcad74a2be2db4049c36de5409c5436066c37deecd",
   "artifacts": [
@@ -117,7 +118,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "c1b3d86492fcf8b19ab8b10809c33232780ff3b0",
+  "tap_git_head": "2a0eeb2171a260529cd41e1f6d64ae7cc2a1a495",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-monthly.rb",
   "ruby_source_checksum": {
