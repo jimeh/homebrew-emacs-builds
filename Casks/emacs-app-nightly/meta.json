@@ -13,6 +13,7 @@
   "appcast": null,
   "version": "2023-12-08.ef732bd.master",
   "installed": null,
+  "installed_time": null,
   "outdated": false,
   "sha256": "389541a0f43758aebda29bf3255ff8bf228eb79f0c18543c5ae1c5262dcb6495",
   "artifacts": [
