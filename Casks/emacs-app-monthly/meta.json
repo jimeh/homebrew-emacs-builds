@@ -118,7 +118,7 @@
   },
   "container": null,
   "auto_updates": null,
-  "tap_git_head": "8d8da7759c5d5632593c8ba073cb2102233ca096",
+  "tap_git_head": "df5c384456481f180f0a1ad32a4f3ff84e14d29d",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-monthly.rb",
   "ruby_source_checksum": {
