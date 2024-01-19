@@ -8,14 +8,14 @@
   ],
   "desc": "GNU Emacs text editor",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.1/Emacs.2023-07-30.a9b2822.emacs-29-1.macOS-12.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-29.2/Emacs.2024-01-18.ef01b63.emacs-29-2.macOS-12.x86_64.dmg",
   "url_specs": {},
   "appcast": null,
-  "version": "29.1",
+  "version": "29.2",
   "installed": null,
   "installed_time": null,
   "outdated": false,
-  "sha256": "06975a567a038f557f88d865f438aa838a4da3a1771885b747bcd416cb85c67c",
+  "sha256": "5f119b58676f469956701744e0504d125febcc68ddb50c2c6fffac9ce1baa946",
   "artifacts": [
     {
       "app": [
@@ -125,10 +125,10 @@
   "disabled": false,
   "disable_date": null,
   "disable_reason": null,
-  "tap_git_head": "59d0c3bac650106ba75f2c09a6461ac166f846b5",
+  "tap_git_head": "a270ac4cf2362b97724c6305227b76c487b063ef",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app.rb",
   "ruby_source_checksum": {
-    "sha256": "ed9777a8f70acb942a4850b130b052716436139e8734e0a14785625c9fc80f51"
+    "sha256": "f4f718b9f4a75fd3a52829481d91a5ac8075ac0a61ad80adceb3a48ad1a9f81b"
   }
 }
