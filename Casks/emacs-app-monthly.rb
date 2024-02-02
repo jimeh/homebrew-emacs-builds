@@ -5,17 +5,17 @@ cask 'emacs-app-monthly' do
   desc 'GNU Emacs text editor (monthly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '2024-01-01.24741d2.master'
+  version '2024-02-01.d89e427.master'
 
   on_arm do
-    sha256 '2ddc67662e84644ada3ecf6021db1b9f538bd0e34cd12ee54b7085b0cf76398d'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-01-01.24741d2.master/Emacs.2024-01-01.24741d2.master.macOS-13.arm64.dmg'
+    sha256 '99c9c2ffee6ec4742adba84bf58d1ff1f535ff5e49c7169331092e9a283020b5'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-02-01.d89e427.master/Emacs.2024-02-01.d89e427.master.macOS-13.arm64.dmg'
     depends_on macos: '>= :ventura'
   end
 
   on_intel do
-    sha256 '9e5ae8d75b1e2bd1e30a6f4f763a221534bff455b5719aaba0c9da6174518620'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-01-01.24741d2.master/Emacs.2024-01-01.24741d2.master.macOS-12.x86_64.dmg'
+    sha256 '5201d79a708323f556c7ea2cc1fcfa3211fbb45db44a6d6ca275380bb606c66f'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-02-01.d89e427.master/Emacs.2024-02-01.d89e427.master.macOS-12.x86_64.dmg'
     depends_on macos: '>= :monterey'
   end
 
