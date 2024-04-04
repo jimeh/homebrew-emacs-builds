@@ -14,6 +14,8 @@
   "version": "2024-04-01.a5fbb65.master",
   "installed": null,
   "installed_time": null,
+  "bundle_version": null,
+  "bundle_short_version": null,
   "outdated": false,
   "sha256": "611f118d7f187dc9ed2ab19a0b742b63931a0553fcb8bfb1024b137c6938a020",
   "artifacts": [
@@ -124,7 +126,7 @@
   "disabled": false,
   "disable_date": null,
   "disable_reason": null,
-  "tap_git_head": "b0e1aeee4df4c73123687051e26c2f82aa6e5d21",
+  "tap_git_head": "4cf2717e7196cf124b832d432cd3a882b1175de9",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-monthly.rb",
   "ruby_source_checksum": {

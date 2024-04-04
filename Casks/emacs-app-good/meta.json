@@ -14,6 +14,8 @@
   "version": "2023-12-01.eec1142.master",
   "installed": null,
   "installed_time": null,
+  "bundle_version": null,
+  "bundle_short_version": null,
   "outdated": false,
   "sha256": "09bbb4e29f6b81a553b2b2dcad74a2be2db4049c36de5409c5436066c37deecd",
   "artifacts": [
@@ -125,7 +127,7 @@
   "disabled": false,
   "disable_date": null,
   "disable_reason": null,
-  "tap_git_head": "b0e1aeee4df4c73123687051e26c2f82aa6e5d21",
+  "tap_git_head": "4cf2717e7196cf124b832d432cd3a882b1175de9",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-good.rb",
   "ruby_source_checksum": {
