@@ -5,17 +5,17 @@ cask 'emacs-app-monthly' do
   desc 'GNU Emacs text editor (monthly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '2024-04-01.a5fbb65.master'
+  version '2024-05-01.468f3f1.master'
 
   on_arm do
-    sha256 '60e9296b2d955c3329e16b38da372ec845fd0c9731ac322be4813516c8280439'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-04-01.a5fbb65.master/Emacs.2024-04-01.a5fbb65.master.macOS-13.arm64.dmg'
+    sha256 'b137c0d39246367e24b473f2f39442c2a6f5b3a0ce17d74d3c5046f4cd68ac8e'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-05-01.468f3f1.master/Emacs.2024-05-01.468f3f1.master.macOS-13.arm64.dmg'
     depends_on macos: '>= :ventura'
   end
 
   on_intel do
-    sha256 '611f118d7f187dc9ed2ab19a0b742b63931a0553fcb8bfb1024b137c6938a020'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-04-01.a5fbb65.master/Emacs.2024-04-01.a5fbb65.master.macOS-12.x86_64.dmg'
+    sha256 '735db462b67a1c484d711f5421331f466a62ce8ad117a6af742f27bc7a1e1f72'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-05-01.468f3f1.master/Emacs.2024-05-01.468f3f1.master.macOS-12.x86_64.dmg'
     depends_on macos: '>= :monterey'
   end
 
