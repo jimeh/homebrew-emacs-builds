@@ -5,19 +5,11 @@ cask 'emacs-app-monthly' do
   desc 'GNU Emacs text editor (monthly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '2024-09-01.92ea393.master'
+  version '2024-10-01.6a68334.master'
 
-  on_arm do
-    sha256 '189b5b38ddaea998cbf31058cbf52440e3027dfe7cde06e8c49645397399e255'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-09-01.92ea393.master/Emacs.2024-09-01.92ea393.master.macOS-13.arm64.dmg'
-    depends_on macos: '>= :ventura'
-  end
-
-  on_intel do
-    sha256 'a92c7131bd2a48190e84285e29632c7fce58b2a17c6ed96605c48c120bd83f50'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-09-01.92ea393.master/Emacs.2024-09-01.92ea393.master.macOS-12.x86_64.dmg'
-    depends_on macos: '>= :monterey'
-  end
+  sha256 'c8ed5abbcfe02762becca71dd61bd7e7a16b6744f3214270e3724e410b854bb8'
+  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-10-01.6a68334.master/Emacs.2024-10-01.6a68334.master.macOS-13.arm64.dmg'
+  depends_on macos: '>= :ventura', arch: :arm64
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
