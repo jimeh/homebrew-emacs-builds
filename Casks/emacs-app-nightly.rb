@@ -5,10 +5,10 @@ cask 'emacs-app-nightly' do
   desc 'GNU Emacs text editor (nightly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '2024-10-04.e2b8e9d.master'
+  version '2024-10-05.4c7a6dc.master'
 
-  sha256 '554098efe6f14707a7ad5c3b199f85bd568b1291f2708ad64aabb511b9b85984'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-10-04.e2b8e9d.master/Emacs.2024-10-04.e2b8e9d.master.macOS-12.x86_64.dmg'
+  sha256 '6eed561f7fa3158a351744eb2fa333e14c7fc98074871282603b82ff6f1b3571'
+  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-10-05.4c7a6dc.master/Emacs.2024-10-05.4c7a6dc.master.macOS-12.x86_64.dmg'
   depends_on macos: '>= :monterey'
 
   livecheck do
