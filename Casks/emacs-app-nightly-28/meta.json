@@ -126,7 +126,7 @@
   "disabled": false,
   "disable_date": null,
   "disable_reason": null,
-  "tap_git_head": "f4795b17ed3d7699eeb0e05f0115614c98249ed7",
+  "tap_git_head": "12a86e1dfa9adc514dfbc7f70403d306c00e53ab",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly-28.rb",
   "ruby_source_checksum": {
