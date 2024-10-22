@@ -7,9 +7,18 @@ cask 'emacs-app-pretest' do
 
   version '30.0.91-pretest'
 
-  sha256 'b8a6489edd1417a41b92978e060777f5b697e0ab1366e32a84f7a4f23113f3cd'
-  url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-13.arm64.dmg'
-  depends_on macos: '>= :ventura', arch: :arm64
+  on_arm do
+    sha256 'b8a6489edd1417a41b92978e060777f5b697e0ab1366e32a84f7a4f23113f3cd'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-13.arm64.dmg'
+    depends_on macos: '>= :ventura'
+  end
+
+  on_intel do
+    sha256 'bc64c27c8263371a121a15e054ae0d2fc1e5a54a142371e39828449a5d37b1c3'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-12.x86_64.dmg'
+    depends_on macos: '>= :monterey'
+  end
+
 
   livecheck do
     url 'https://github.com/jimeh/emacs-builds.git'
