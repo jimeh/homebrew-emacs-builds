@@ -24,13 +24,14 @@ jobs:
         with:
           repository: jimeh/build-emacs-for-macos
           ref: "v0.6.45"
-      - uses: actions/setup-go@v4
+      - name: Install Go
+        uses: actions/setup-go@v5
         with:
           go-version: "1.21"
       - name: Build emacs-builder tool
         run: make build
       - name: Upload emacs-builder artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: emacs-builder
           path: bin/emacs-builder
@@ -67,7 +68,7 @@ jobs:
           jimeh/emacs-builds/${{ github.event.inputs.cask }}
           | tee livecheck-results.json
       - name: Upload livecheck-results.json artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: livecheck-results.json
           path: livecheck-results.json
@@ -83,14 +84,14 @@ jobs:
           ref: ${{ needs.live-check.outputs.tap_sha }}
           path: tap
       - name: Download pre-built emacs-builder artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: emacs-builder
           path: bin
       - name: Ensure emacs-builder is executable
         run: chmod +x bin/emacs-builder
       - name: Download livecheck-results.json artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: livecheck-results.json
           path: ./
@@ -107,6 +108,8 @@ jobs:
   update-meta:
     runs-on: macos-12
     needs: [update-casks]
+    permissions:
+      contents: write
     steps:
       - name: Checkout tap repository main branch
         uses: actions/checkout@v4
@@ -130,7 +133,7 @@ jobs:
         run: make update
         working-directory: meta
       - name: commit and push changes to meta branch
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(meta): update meta files"
           repository: meta
