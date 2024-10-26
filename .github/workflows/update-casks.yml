@@ -3,7 +3,7 @@ name: Update Casks
 concurrency: jimeh/homebrew-emacs-builds/update-casks
 on:
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 15 * * *"
   workflow_dispatch:
     inputs:
       cask:
