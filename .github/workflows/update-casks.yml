@@ -21,7 +21,7 @@ jobs:
     steps:
       - id: builder_ref
         run: |
-          BUILDER_REF=v0.6.52
+          BUILDER_REF=v0.6.53
           echo "ref=$BUILDER_REF=v0" >> "$GITHUB_OUTPUT"
       - name: Cache emacs-builder (${{ runner.arch }})
         id: cache
