@@ -5,18 +5,17 @@ cask 'emacs-app-pretest' do
   desc 'GNU Emacs text editor (latest pretest)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '30.0.91-pretest'
+  version '30.0.92-pretest'
 
   on_arm do
-    sha256 'b8a6489edd1417a41b92978e060777f5b697e0ab1366e32a84f7a4f23113f3cd'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-13.arm64.dmg'
-    depends_on macos: '>= :ventura'
+    sha256 '27b4502b994f50395bebe4ca071a51bbd0a7474923fa5b289140634df0883b25'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.92-pretest/Emacs.2024-10-26.ed1d691.emacs-30-0-92-pretest.macOS-11.arm64.dmg'
+    depends_on macos: '>= :big_sur'
   end
-
   on_intel do
-    sha256 'bc64c27c8263371a121a15e054ae0d2fc1e5a54a142371e39828449a5d37b1c3'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-12.x86_64.dmg'
-    depends_on macos: '>= :monterey'
+    sha256 '8b4c1bcc22efec82332aec5f434d82f39cb88e4385278c1f30bf9264cc62a80a'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.92-pretest/Emacs.2024-10-26.ed1d691.emacs-30-0-92-pretest.macOS-11.x86_64.dmg'
+    depends_on macos: '>= :big_sur'
   end
 
   livecheck do
