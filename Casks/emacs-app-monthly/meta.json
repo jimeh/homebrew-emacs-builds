@@ -133,7 +133,7 @@
   "disable_date": null,
   "disable_reason": null,
   "disable_replacement": null,
-  "tap_git_head": "9bd71183a07fa36d0713340b2c062f3583ba3e01",
+  "tap_git_head": "02754a5ff2db6f41242a792a3370406e9dd9e485",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-monthly.rb",
   "ruby_source_checksum": {
