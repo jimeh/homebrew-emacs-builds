@@ -7,21 +7,21 @@
   on_arm do
     sha256 '{{ $arm64SHA }}'
     url '{{ $arm64URL }}'
-    depends_on macos: '>= :ventura'
+    depends_on macos: '>= :big_sur'
   end
 
   on_intel do
     sha256 '{{ $x86_64SHA }}'
     url '{{ $x86_64URL }}'
-    depends_on macos: '>= :monterey'
+    depends_on macos: '>= :big_sur'
   end
 {{- else if ne $arm64URL "" }}
   sha256 '{{ $arm64SHA }}'
   url '{{ $arm64URL }}'
-  depends_on macos: '>= :ventura', arch: :arm64
+  depends_on macos: '>= :big_sur', arch: :arm64
 {{- else }}
   sha256 '{{ $x86_64SHA }}'
   url '{{ $x86_64URL }}'
-  depends_on macos: '>= :monterey'
+  depends_on macos: '>= :big_sur'
 {{- end }}
 {{- end -}}
