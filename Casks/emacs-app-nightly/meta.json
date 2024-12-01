@@ -8,15 +8,15 @@
   ],
   "desc": "GNU Emacs text editor (nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-10-27.9e40d3f.master/Emacs.2024-10-27.9e40d3f.master.macOS-12.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2024-11-30.a8169be.master/Emacs.2024-11-30.a8169be.master.macOS-11.arm64.dmg",
   "url_specs": {},
-  "version": "2024-10-27.9e40d3f.master",
+  "version": "2024-11-30.a8169be.master",
   "installed": null,
   "installed_time": null,
   "bundle_version": null,
   "bundle_short_version": null,
   "outdated": false,
-  "sha256": "25f1259745611eb9c82a3e2d25f227c12c362c0df7a0aea21a17d18f65f56129",
+  "sha256": "03b148362ebd33492c779a6cc4c01665a7c2e8fd734a859197368d0e3ced82d9",
   "artifacts": [
     {
       "app": [
@@ -47,7 +47,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
         {
-          "target": "/usr/local/include/emacs-module.h"
+          "target": "/opt/homebrew/include/emacs-module.h"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
         {
-          "target": "/usr/local/share/emacs/site-lisp/subdirs.el"
+          "target": "/opt/homebrew/share/emacs/site-lisp/subdirs.el"
         }
       ]
     },
@@ -95,7 +95,7 @@
   "depends_on": {
     "macos": {
       ">=": [
-        "12"
+        "11"
       ]
     }
   },
@@ -123,13 +123,15 @@
   "deprecated": false,
   "deprecation_date": null,
   "deprecation_reason": null,
+  "deprecation_replacement": null,
   "disabled": false,
   "disable_date": null,
   "disable_reason": null,
-  "tap_git_head": "3ad358b554c077bbb9253d5705bcf8dd89971c93",
+  "disable_replacement": null,
+  "tap_git_head": "9bd71183a07fa36d0713340b2c062f3583ba3e01",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly.rb",
   "ruby_source_checksum": {
-    "sha256": "b618f9fe536c61a88d69f46a4f7e91e87e0ba371389b73c7c738413919316fa5"
+    "sha256": "e33ea326346a33791cd9346868693b9b50695b13a34fd0a0a46de256588e16ce"
   }
 }

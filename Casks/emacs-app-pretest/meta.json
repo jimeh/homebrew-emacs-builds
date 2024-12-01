@@ -8,7 +8,7 @@
   ],
   "desc": "GNU Emacs text editor (latest pretest)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-12.x86_64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.0.91-pretest/Emacs.2024-09-11.9a1c76b.emacs-30-0-91-pretest.macOS-13.arm64.dmg",
   "url_specs": {},
   "version": "30.0.91-pretest",
   "installed": null,
@@ -16,7 +16,7 @@
   "bundle_version": null,
   "bundle_short_version": null,
   "outdated": false,
-  "sha256": "bc64c27c8263371a121a15e054ae0d2fc1e5a54a142371e39828449a5d37b1c3",
+  "sha256": "b8a6489edd1417a41b92978e060777f5b697e0ab1366e32a84f7a4f23113f3cd",
   "artifacts": [
     {
       "app": [
@@ -47,7 +47,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/include/emacs-module.h",
         {
-          "target": "/usr/local/include/emacs-module.h"
+          "target": "/opt/homebrew/include/emacs-module.h"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "binary": [
         "/Applications/Emacs.app/Contents/Resources/site-lisp/subdirs.el",
         {
-          "target": "/usr/local/share/emacs/site-lisp/subdirs.el"
+          "target": "/opt/homebrew/share/emacs/site-lisp/subdirs.el"
         }
       ]
     },
@@ -95,7 +95,7 @@
   "depends_on": {
     "macos": {
       ">=": [
-        "12"
+        "13"
       ]
     }
   },
@@ -123,10 +123,12 @@
   "deprecated": false,
   "deprecation_date": null,
   "deprecation_reason": null,
+  "deprecation_replacement": null,
   "disabled": false,
   "disable_date": null,
   "disable_reason": null,
-  "tap_git_head": "3ad358b554c077bbb9253d5705bcf8dd89971c93",
+  "disable_replacement": null,
+  "tap_git_head": "9bd71183a07fa36d0713340b2c062f3583ba3e01",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-pretest.rb",
   "ruby_source_checksum": {
