@@ -128,7 +128,7 @@
   "disable_date": null,
   "disable_reason": null,
   "disable_replacement": null,
-  "tap_git_head": "e1043e84594c1f2c63248d733bf19eb4397d7992",
+  "tap_git_head": "24d4dbcf28a311984dc390e818a5af02f2207db7",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-pretest.rb",
   "ruby_source_checksum": {
