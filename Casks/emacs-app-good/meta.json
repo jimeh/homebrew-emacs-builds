@@ -128,7 +128,7 @@
   "disable_date": null,
   "disable_reason": null,
   "disable_replacement": null,
-  "tap_git_head": "66c8edc8fc43fb018ce74d151529ea205a1eb472",
+  "tap_git_head": "5c4b1eda207ad095b4a20a8299edb8f72f605c46",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-good.rb",
   "ruby_source_checksum": {
