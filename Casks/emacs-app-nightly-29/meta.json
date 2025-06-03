@@ -11,6 +11,9 @@
   "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2023-11-14.5a1808d.emacs-29/Emacs.2023-11-14.5a1808d.emacs-29.macOS-11.x86_64.dmg",
   "url_specs": {},
   "version": "2023-11-14.5a1808d.emacs-29",
+  "autobump": true,
+  "no_autobump_message": null,
+  "skip_livecheck": false,
   "installed": null,
   "installed_time": null,
   "bundle_version": null,
@@ -130,7 +133,7 @@
   "disable_reason": null,
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
-  "tap_git_head": "0dc646f51146ef444bf85bc7b6f6c63f8deb9c4a",
+  "tap_git_head": "d764ea542c91471b841c2cb5781b84f8131dadb9",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly-29.rb",
   "ruby_source_checksum": {
