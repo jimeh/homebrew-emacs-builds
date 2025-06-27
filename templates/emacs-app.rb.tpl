@@ -12,7 +12,7 @@ cask 'emacs-app' do
     url 'https://github.com/jimeh/emacs-builds.git'
     strategy :git do |tags|
       tags.map do |tag|
-        m = /^Emacs-(\d+\.\d+[a-z]*)$/.match(tag)
+        m = /^Emacs-(\d+\.\d+[a-z]*(-.+)?)$/.match(tag)
         next unless m
 
         m[1]
