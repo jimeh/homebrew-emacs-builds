@@ -22,7 +22,7 @@ cask 'emacs-app-pretest' do
     url 'https://github.com/jimeh/emacs-builds.git'
     strategy :git do |tags|
       tags.map do |tag|
-        m = /^Emacs-(.+-pretest(-.+)?)$/.match(tag)
+        m = /^Emacs-(.+-pretest(-\d+)?)$/.match(tag)
         next unless m
 
         m[1]
