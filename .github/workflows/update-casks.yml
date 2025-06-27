@@ -20,25 +20,25 @@ jobs:
       - id: builder_ref
         run: |
           BUILDER_REF=v0.6.60
-          echo "ref=$BUILDER_REF=v0" >> "$GITHUB_OUTPUT"
+          echo "ref=${BUILDER_REF}" >> "$GITHUB_OUTPUT"
       - name: Cache emacs-builder (${{ runner.arch }})
         id: cache
         uses: actions/cache@v4
         with:
           path: bin/emacs-builder
-          key: emacs-builder-${{ runner.arch }}-${{ steps.builder_ref.outputs.sha }}-bin
+          key: emacs-builder-${{ runner.arch }}-${{ steps.builder_ref.outputs.ref }}-0-bin
       - name: Checkout build-emacs-for-macos repo
         if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/checkout@v4
         with:
           repository: jimeh/build-emacs-for-macos
-          ref: ${{ steps.builder_ref.outputs.sha }}
+          ref: ${{ steps.builder_ref.outputs.ref }}
           fetch-depth: 0
       - name: Setup Go
         if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/setup-go@v5
         with:
-          go-version: "1.23"
+          go-version-file: "go.mod"
       - name: Build emacs-builder tool
         if: steps.cache.outputs.cache-hit != 'true'
         run: make build
