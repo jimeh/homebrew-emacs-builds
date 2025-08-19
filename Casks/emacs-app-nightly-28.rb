@@ -22,25 +22,19 @@ cask 'emacs-app-nightly-28' do
     end
   end
 
-  conflicts_with(
-    cask: %w[
-      emacs-app
-      emacs-app-good
-      emacs-app-monthly
-      emacs-app-nightly
-      emacs-app-nightly-29
-      emacs-app-pretest
-      emacs
-      emacs-nightly
-      emacs-pretest
-      emacs-mac
-      emacs-mac-spacemacs-icon
-    ],
-    formula: %w[
-      emacs
-      emacs-mac
-    ]
-  )
+  conflicts_with cask: %w[
+    emacs-app
+    emacs-app-good
+    emacs-app-monthly
+    emacs-app-nightly
+    emacs-app-nightly-29
+    emacs-app-pretest
+    emacs
+    emacs-nightly
+    emacs-pretest
+    emacs-mac
+    emacs-mac-spacemacs-icon
+  ]
 
   depends_on macos: '>= :big_sur'
 
