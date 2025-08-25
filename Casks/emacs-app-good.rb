@@ -26,25 +26,19 @@ cask 'emacs-app-good' do
     end
   end
 
-  conflicts_with(
-    cask: %w[
-      emacs-app
-      emacs-app-monthly
-      emacs-app-nightly
-      emacs-app-nightly-28
-      emacs-app-nightly-29
-      emacs-app-pretest
-      emacs
-      emacs-nightly
-      emacs-pretest
-      emacs-mac
-      emacs-mac-spacemacs-icon
-    ],
-    formula: %w[
-      emacs
-      emacs-mac
-    ]
-  )
+  conflicts_with cask: %w[
+    emacs-app
+    emacs-app-monthly
+    emacs-app-nightly
+    emacs-app-nightly-28
+    emacs-app-nightly-29
+    emacs-app-pretest
+    emacs
+    emacs-nightly
+    emacs-pretest
+    emacs-mac
+    emacs-mac-spacemacs-icon
+  ]
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
