@@ -115,10 +115,6 @@
       "emacs-pretest",
       "emacs-mac",
       "emacs-mac-spacemacs-icon"
-    ],
-    "formula": [
-      "emacs",
-      "emacs-mac"
     ]
   },
   "container": null,
@@ -133,10 +129,10 @@
   "disable_reason": null,
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
-  "tap_git_head": "c79da89bd79dec2d1a587dc94defc83105bb4641",
+  "tap_git_head": "c4403479ed985f20464198c0c6fa6a3b744e59d0",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly-28.rb",
   "ruby_source_checksum": {
-    "sha256": "14c058691179edfcfea63be2d29cfd04c2349a880fd318cd7dc5782cb593e6ee"
+    "sha256": "9c9eb80ec7ae46bda6590eaff9da3743eb85ee10ea4a1e8d796a132a86738ce2"
   }
 }
