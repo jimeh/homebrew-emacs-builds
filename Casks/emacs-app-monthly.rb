@@ -42,10 +42,6 @@ cask 'emacs-app-monthly' do
       emacs-pretest
       emacs-mac
       emacs-mac-spacemacs-icon
-    ],
-    formula: %w[
-      emacs
-      emacs-mac
     ]
   )
 
