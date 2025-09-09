@@ -67,10 +67,10 @@ jobs:
         id: tap_sha
         run: |
           echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-      - name: Symlink homebrew tap
+      - name: Copy tap repository to homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
-          ln -s "${{ github.workspace }}/tap" \
+          cp -av "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: brew livecheck (all casks)
         if: ${{ github.event.inputs.cask == '' }}
@@ -132,10 +132,10 @@ jobs:
         with:
           ref: main
           path: tap
-      - name: Symlink homebrew tap
+      - name: Copy tap repository to homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
-          ln -s "${{ github.workspace }}/tap" \
+          cp -av "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: Checkout tap repository meta branch
         uses: actions/checkout@v4
