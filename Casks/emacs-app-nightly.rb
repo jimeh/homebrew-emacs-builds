@@ -5,16 +5,16 @@ cask 'emacs-app-nightly' do
   desc 'GNU Emacs text editor (nightly build)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '2025-10-11.90b43e3.master'
+  version '2025-10-13.0dd8138.master'
 
   on_arm do
-    sha256 '5e9be9acb7db8d01b6de22afc854123bb7a653ea706cfab312681b92912d2ff1'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2025-10-11.90b43e3.master/Emacs.2025-10-11.90b43e3.master.macOS-11.arm64.dmg'
+    sha256 '1c05b2bf1fcd52b1661c509ddf5550d3a52adcf01ea470c0dbcb6d47ac147769'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2025-10-13.0dd8138.master/Emacs.2025-10-13.0dd8138.master.macOS-11.arm64.dmg'
     depends_on macos: '>= :big_sur'
   end
   on_intel do
-    sha256 '4df92fa5b7753d2006511ccc1d5b618e912c016df4f134a6c6497b3388d88f14'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2025-10-11.90b43e3.master/Emacs.2025-10-11.90b43e3.master.macOS-11.x86_64.dmg'
+    sha256 '04fb98123a540cbe66e5c83ec97abf1eb755f4815bf679d386c258d78ed37c90'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs.2025-10-13.0dd8138.master/Emacs.2025-10-13.0dd8138.master.macOS-11.x86_64.dmg'
     depends_on macos: '>= :big_sur'
   end
 
