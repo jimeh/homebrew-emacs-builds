@@ -75,13 +75,13 @@ jobs:
       - name: brew livecheck (all casks)
         if: ${{ github.event.inputs.cask == '' }}
         run: >-
-          brew livecheck --json --quiet --tap jimeh/emacs-builds
+          brew livecheck --json --quiet --tap jimeh/emacs-builds 2>/dev/null
           | tee livecheck-results.json
       - name: brew livecheck (specific cask)
         if: ${{ github.event.inputs.cask != '' }}
         run: >-
           brew livecheck --json --quiet
-          jimeh/emacs-builds/${{ github.event.inputs.cask }}
+          jimeh/emacs-builds/${{ github.event.inputs.cask }} 2>/dev/null
           | tee livecheck-results.json
       - name: Upload livecheck-results.json artifact
         uses: actions/upload-artifact@v4
