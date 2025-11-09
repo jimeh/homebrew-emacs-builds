@@ -72,16 +72,18 @@ jobs:
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
           cp -av "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
+      - name: Run brew update
+        run: brew update
       - name: brew livecheck (all casks)
         if: ${{ github.event.inputs.cask == '' }}
         run: >-
-          brew livecheck --json --quiet --tap jimeh/emacs-builds 2>/dev/null
+          brew livecheck --json --quiet --tap jimeh/emacs-builds
           | tee livecheck-results.json
       - name: brew livecheck (specific cask)
         if: ${{ github.event.inputs.cask != '' }}
         run: >-
           brew livecheck --json --quiet
-          jimeh/emacs-builds/${{ github.event.inputs.cask }} 2>/dev/null
+          jimeh/emacs-builds/${{ github.event.inputs.cask }}
           | tee livecheck-results.json
       - name: Upload livecheck-results.json artifact
         uses: actions/upload-artifact@v4
