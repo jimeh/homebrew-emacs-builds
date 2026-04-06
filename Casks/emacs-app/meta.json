@@ -132,7 +132,7 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "tap_git_head": "60f3c751c17a62fbcf1f1179768f0d8b3acf26e3",
+  "tap_git_head": "d11e326e3f73f73074a59d4c998698fee668958c",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app.rb",
   "ruby_source_checksum": {
