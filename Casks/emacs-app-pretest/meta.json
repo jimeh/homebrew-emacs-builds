@@ -95,6 +95,7 @@
     }
   ],
   "caveats": null,
+  "caveats_rosetta": null,
   "depends_on": {
     "macos": {
       ">=": [
@@ -132,7 +133,7 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "tap_git_head": "d2f58a86a40060395d7ebf46bb53268938fcc729",
+  "tap_git_head": "610e71f1f15df625832a6eade96aeaf591af6760",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-pretest.rb",
   "ruby_source_checksum": {
