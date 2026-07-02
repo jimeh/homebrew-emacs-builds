@@ -8,9 +8,9 @@
   ],
   "desc": "GNU Emacs text editor (nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2026-05-18.641754e.master/Emacs.2026-05-18.641754e.master.macOS-11.arm64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2026-07-01.398a8c7.master/Emacs.2026-07-01.398a8c7.master.macOS-11.arm64.dmg",
   "url_specs": {},
-  "version": "2026-05-18.641754e.master",
+  "version": "2026-07-01.398a8c7.master",
   "autobump": true,
   "no_autobump_message": null,
   "skip_livecheck": false,
@@ -18,33 +18,40 @@
   "installed_time": null,
   "bundle_version": null,
   "bundle_short_version": null,
+  "pinned": false,
+  "pinned_version": null,
   "outdated": false,
-  "sha256": "2ec69ef08a70406e8b28e687b451f207369ce8ee04ad0fcefd8d0ee10e06e012",
+  "sha256": "88a33765877303559ab628b16690d2f2d17afcf3249908dc7cf3e93d4f781fb5",
   "artifacts": [
     {
       "app": [
         "Emacs.app"
-      ]
+      ],
+      "target": "/Applications/Emacs.app"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/ebrowse"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/emacs"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/emacsclient"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/etags"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/etags"
     },
     {
       "binary": [
@@ -52,7 +59,8 @@
         {
           "target": "/opt/homebrew/include/emacs-module.h"
         }
-      ]
+      ],
+      "target": "/opt/homebrew/include/emacs-module.h"
     },
     {
       "binary": [
@@ -60,27 +68,32 @@
         {
           "target": "/opt/homebrew/share/emacs/site-lisp/subdirs.el"
         }
-      ]
+      ],
+      "target": "/opt/homebrew/share/emacs/site-lisp/subdirs.el"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/ebrowse.1.gz"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/emacs.1.gz"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/emacsclient.1.gz"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/etags.1.gz"
     },
     {
       "zap": [
@@ -133,10 +146,10 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "tap_git_head": "b998c3659f2f4a8f0ce0cb9012646eaa645149cb",
+  "tap_git_head": "e29fdf9c5ca146604e89b97492f04412a5274f95",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly.rb",
   "ruby_source_checksum": {
-    "sha256": "bf568ccf910f69f924a29b9facb344a93ae01775dbfdbe4cb27d7a25734ee7f5"
+    "sha256": "f651825e0ee1d15814e8f0ea9aa545fc3fb8bbe25f9c57936022fee9e5e7d940"
   }
 }

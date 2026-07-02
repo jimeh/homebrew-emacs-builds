@@ -18,33 +18,40 @@
   "installed_time": null,
   "bundle_version": null,
   "bundle_short_version": null,
+  "pinned": false,
+  "pinned_version": null,
   "outdated": false,
   "sha256": "8277021ed3eb716333120638ffc2565c1b893e9146e06738bb3521630f39eb19",
   "artifacts": [
     {
       "app": [
         "Emacs.app"
-      ]
+      ],
+      "target": "/Applications/Emacs.app"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/ebrowse"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/ebrowse"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/emacs"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/emacs"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/emacsclient"
     },
     {
       "binary": [
         "/Applications/Emacs.app/Contents/MacOS/bin/etags"
-      ]
+      ],
+      "target": "/opt/homebrew/bin/etags"
     },
     {
       "binary": [
@@ -52,7 +59,8 @@
         {
           "target": "/opt/homebrew/include/emacs-module.h"
         }
-      ]
+      ],
+      "target": "/opt/homebrew/include/emacs-module.h"
     },
     {
       "binary": [
@@ -60,27 +68,32 @@
         {
           "target": "/opt/homebrew/share/emacs/site-lisp/subdirs.el"
         }
-      ]
+      ],
+      "target": "/opt/homebrew/share/emacs/site-lisp/subdirs.el"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/ebrowse.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/ebrowse.1.gz"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/emacs.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/emacs.1.gz"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/emacsclient.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/emacsclient.1.gz"
     },
     {
       "manpage": [
         "/Applications/Emacs.app/Contents/Resources/man/man1/etags.1.gz"
-      ]
+      ],
+      "target": "/opt/homebrew/share/man/man1/etags.1.gz"
     },
     {
       "zap": [
@@ -133,7 +146,7 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "tap_git_head": "b998c3659f2f4a8f0ce0cb9012646eaa645149cb",
+  "tap_git_head": "e29fdf9c5ca146604e89b97492f04412a5274f95",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app.rb",
   "ruby_source_checksum": {
