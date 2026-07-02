@@ -5,16 +5,16 @@ cask 'emacs-app-pretest' do
   desc 'GNU Emacs text editor (latest pretest)'
   homepage 'https://github.com/jimeh/emacs-builds'
 
-  version '30.1.90-pretest'
+  version '31.0.90-pretest'
 
   on_arm do
-    sha256 '7b83465eb5fd9cd9cecf3d318d154516ba0481e67957ddcc8669f43c53e80c53'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.1.90-pretest/Emacs.2025-05-18.1136aed.emacs-30-1-90-pretest.macOS-11.arm64.dmg'
+    sha256 'eb1ff19221a5cadbccc23354bd665ce1049518569db8dc53fc2b08ee2f9db4ab'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-31.0.90-pretest/Emacs.2026-06-05.0ee48ac.emacs-31-0-90-pretest.macOS-11.arm64.dmg'
     depends_on macos: '>= :big_sur'
   end
   on_intel do
-    sha256 'e19f10777998947cd0267ea435345945c75660033e0885f7bd5b1666e0fb8f59'
-    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.1.90-pretest/Emacs.2025-05-18.1136aed.emacs-30-1-90-pretest.macOS-11.x86_64.dmg'
+    sha256 '05bb80e0aaffee8cb1b9630a947424533ddb2530c81922eb5b06588ac1a5c093'
+    url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-31.0.90-pretest/Emacs.2026-06-05.0ee48ac.emacs-31-0-90-pretest.macOS-11.x86_64.dmg'
     depends_on macos: '>= :big_sur'
   end
 
