@@ -7,14 +7,14 @@
   on_arm do
     sha256 '{{ $arm64SHA }}'
     url '{{ $arm64URL }}'
-    depends_on macos: '>= :big_sur'
+    depends_on macos: :big_sur
   end
 {{- end }}
 {{- if ne $x86_64URL "" }}
   on_intel do
     sha256 '{{ $x86_64SHA }}'
     url '{{ $x86_64URL }}'
-    depends_on macos: '>= :big_sur'
+    depends_on macos: :big_sur
   end
 {{- end }}
 {{- end -}}

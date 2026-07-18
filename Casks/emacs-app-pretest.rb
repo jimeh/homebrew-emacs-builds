@@ -10,12 +10,12 @@ cask 'emacs-app-pretest' do
   on_arm do
     sha256 'eb1ff19221a5cadbccc23354bd665ce1049518569db8dc53fc2b08ee2f9db4ab'
     url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-31.0.90-pretest/Emacs.2026-06-05.0ee48ac.emacs-31-0-90-pretest.macOS-11.arm64.dmg'
-    depends_on macos: '>= :big_sur'
+    depends_on macos: :big_sur
   end
   on_intel do
     sha256 '05bb80e0aaffee8cb1b9630a947424533ddb2530c81922eb5b06588ac1a5c093'
     url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-31.0.90-pretest/Emacs.2026-06-05.0ee48ac.emacs-31-0-90-pretest.macOS-11.x86_64.dmg'
-    depends_on macos: '>= :big_sur'
+    depends_on macos: :big_sur
   end
 
   livecheck do

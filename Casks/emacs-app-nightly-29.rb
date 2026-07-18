@@ -38,7 +38,7 @@ cask 'emacs-app-nightly-29' do
     ]
   )
 
-  depends_on macos: '>= :big_sur'
+  depends_on macos: :big_sur
 
   app 'Emacs.app'
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
