@@ -10,12 +10,12 @@ cask 'emacs-app' do
   on_arm do
     sha256 '8277021ed3eb716333120638ffc2565c1b893e9146e06738bb3521630f39eb19'
     url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.2-1/Emacs.2025-08-14.636f166.emacs-30-2-1.macOS-11.arm64.dmg'
-    depends_on macos: '>= :big_sur'
+    depends_on macos: :big_sur
   end
   on_intel do
     sha256 '9eade73998b1772fb8fba74cfa02ca25ab06285287a6b2bccafc14f609860f8c'
     url 'https://github.com/jimeh/emacs-builds/releases/download/Emacs-30.2-1/Emacs.2025-08-14.636f166.emacs-30-2-1.macOS-11.x86_64.dmg'
-    depends_on macos: '>= :big_sur'
+    depends_on macos: :big_sur
   end
 
   livecheck do
