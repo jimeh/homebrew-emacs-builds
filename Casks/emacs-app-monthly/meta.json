@@ -145,10 +145,10 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "tap_git_head": "cb9adb3b7e82d121c5d670da0f65f28c31e607fe",
+  "tap_git_head": "75a2be6e4489b130666bfc59895f0bb91ddaa649",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-monthly.rb",
   "ruby_source_checksum": {
-    "sha256": "66415c3072e8854f1e9587e66db5132cf7964877b2f6a26e2dd1bb8fd11b89c1"
+    "sha256": "231dfe0ab5f0ed6cb969ad70cea6b9ed0c6522fdce60c9d2a8346a725162b053"
   }
 }
