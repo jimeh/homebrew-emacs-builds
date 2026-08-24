@@ -8,9 +8,9 @@
   ],
   "desc": "GNU Emacs text editor (nightly build)",
   "homepage": "https://github.com/jimeh/emacs-builds",
-  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2026-08-21.11a1cb7.master/Emacs.2026-08-21.11a1cb7.master.macOS-11.arm64.dmg",
+  "url": "https://github.com/jimeh/emacs-builds/releases/download/Emacs.2026-08-23.80383d8.master/Emacs.2026-08-23.80383d8.master.macOS-11.arm64.dmg",
   "url_specs": {},
-  "version": "2026-08-21.11a1cb7.master",
+  "version": "2026-08-23.80383d8.master",
   "autobump": true,
   "no_autobump_message": null,
   "skip_livecheck": false,
@@ -21,7 +21,7 @@
   "pinned": false,
   "pinned_version": null,
   "outdated": false,
-  "sha256": "42ab4ae0ace86006e9476ee3ec4e138396f7cea820c41d7fa2813c625285db97",
+  "sha256": "a63091e2f6e4a06a4c7e7f83cffdda704afc3e33a9066b20ed5027d6ca769122",
   "artifacts": [
     {
       "app": [
@@ -146,10 +146,10 @@
   "disable_replacement_formula": null,
   "disable_replacement_cask": null,
   "disable_args": null,
-  "tap_git_head": "0caeb5028a3c1c9b2f1fe27c543841a489477898",
+  "tap_git_head": "63766b33f14780a2b973bb0c59de223e5dd313a2",
   "languages": [],
   "ruby_source_path": "Casks/emacs-app-nightly.rb",
   "ruby_source_checksum": {
-    "sha256": "2d3485d7a3426600da0046a50ef39381b9926fab669b9caf27562b635149be72"
+    "sha256": "09ec10a0b9a6715a8bfc175d62669e9ccc1f47c520120e3a5b3dd182d731be42"
   }
 }
