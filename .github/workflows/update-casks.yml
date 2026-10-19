@@ -15,7 +15,7 @@ on:
 
 jobs:
   emacs-builder:
-    runs-on: "macos-14"
+    runs-on: "macos-15"
     steps:
       - id: builder_ref
         run: |
@@ -54,7 +54,7 @@ jobs:
           if-no-files-found: error
 
   live-check:
-    runs-on: "macos-14"
+    runs-on: "macos-15"
     outputs:
       tap_sha: ${{ steps.tap_sha.outputs.sha }}
     steps:
@@ -93,7 +93,7 @@ jobs:
           if-no-files-found: error
 
   update-casks:
-    runs-on: "macos-14"
+    runs-on: "macos-15"
     needs: [emacs-builder, live-check]
     steps:
       - name: Checkout tap repository
@@ -124,7 +124,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   update-meta:
-    runs-on: "macos-14"
+    runs-on: "macos-15"
     needs: [update-casks]
     permissions:
       contents: write
