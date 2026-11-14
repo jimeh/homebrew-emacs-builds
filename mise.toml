@@ -1,0 +1,30 @@
+[settings]
+minimum_release_age = "3d"
+
+[settings.age]
+strict = true
+
+[tools]
+actionlint = "1.7.12"
+pinact = "5.0.2"
+zizmor = "1.32.0"
+
+[tasks.lint]
+description = "Run all lint checks"
+depends = ["actionlint", "pinact", "zizmor"]
+
+[tasks.actionlint]
+description = "Lint GitHub Actions workflows"
+run = "actionlint"
+
+[tasks.pinact]
+description = "Check GitHub Actions references are pinned"
+run = "pinact run --fix=false --verify-comment"
+
+[tasks.zizmor]
+description = "Run GitHub Actions security analysis"
+run = "zizmor --offline ."
+
+[tasks."actions:update"]
+description = "Update pinned GitHub Actions to their latest releases"
+run = "pinact run --update"

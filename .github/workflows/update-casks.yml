@@ -1,6 +1,10 @@
 ---
 name: Update Casks
-concurrency: jimeh/homebrew-emacs-builds/update-casks
+concurrency:
+  # Dry runs use their own group so they never cancel a pending real run.
+  group: >-
+    jimeh/homebrew-emacs-builds/update-casks${{
+    inputs.dryRun && '-dry-run' || '' }}
 on:
   workflow_dispatch:
     inputs:
@@ -12,31 +16,44 @@ on:
         description: "Extra arguments passed to emacs-builder cask update"
         required: false
         default: ""
+      dryRun:
+        description: >-
+          Dry run: render casks from the dispatched ref, regenerate meta files
+          from them, and print the changes, without committing or pushing
+          anything
+        type: boolean
+        required: false
+        default: false
+
+permissions: {}
 
 jobs:
   emacs-builder:
     runs-on: "macos-15"
+    permissions:
+      contents: read
     steps:
       - id: builder_ref
         run: |
-          BUILDER_REF=v0.6.60
+          BUILDER_REF=v0.6.65
           echo "ref=${BUILDER_REF}" >> "$GITHUB_OUTPUT"
       - name: Cache emacs-builder (${{ runner.arch }})
         id: cache
-        uses: actions/cache@v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: bin/emacs-builder
           key: emacs-builder-${{ runner.arch }}-${{ steps.builder_ref.outputs.ref }}-0-bin
       - name: Checkout build-emacs-for-macos repo
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: jimeh/build-emacs-for-macos
           ref: ${{ steps.builder_ref.outputs.ref }}
           fetch-depth: 0
+          persist-credentials: false
       - name: Setup Go
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version-file: "go.mod"
       - name: Build emacs-builder tool
@@ -47,7 +64,7 @@ jobs:
         run: chmod +x bin/emacs-builder
       - run: bin/emacs-builder --version
       - name: Upload emacs-builder artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: emacs-builder-${{ runner.arch }}
           path: bin/emacs-builder
@@ -55,42 +72,51 @@ jobs:
 
   live-check:
     runs-on: "macos-15"
+    permissions:
+      contents: read
     outputs:
       tap_sha: ${{ steps.tap_sha.outputs.sha }}
     steps:
       - name: Checkout tap repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          # Dry runs preview the dispatched commit; real runs always use main.
+          ref: ${{ inputs.dryRun && github.sha || 'main' }}
           path: tap
+          persist-credentials: false
       - name: Store tap Git SHA
         id: tap_sha
+        working-directory: tap
         run: |
-          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      # Update Homebrew before installing the tap, so brew update cannot
+      # fetch, fast-forward or rebase the tap away from the checked out SHA.
+      - name: Run brew update
+        run: brew update
       - name: Copy tap repository to homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
-          cp -av "${{ github.workspace }}/tap" \
+          cp -av "${GITHUB_WORKSPACE}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: Trust homebrew tap
         run: brew trust --tap jimeh/emacs-builds
-      - name: Run brew update
-        run: brew update
       - name: brew livecheck (all casks)
-        if: ${{ github.event.inputs.cask == '' }}
+        if: ${{ inputs.cask == '' }}
         shell: bash
         run: >-
           brew livecheck --json --quiet --tap jimeh/emacs-builds
           | tee livecheck-results.json
       - name: brew livecheck (specific cask)
-        if: ${{ github.event.inputs.cask != '' }}
+        if: ${{ inputs.cask != '' }}
         shell: bash
+        env:
+          CASK: ${{ inputs.cask }}
         run: >-
           brew livecheck --json --quiet
-          jimeh/emacs-builds/${{ github.event.inputs.cask }}
+          "jimeh/emacs-builds/${CASK}"
           | tee livecheck-results.json
       - name: Upload livecheck-results.json artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: livecheck-results.json
           path: livecheck-results.json
@@ -99,54 +125,107 @@ jobs:
   update-casks:
     runs-on: "macos-15"
     needs: [emacs-builder, live-check]
+    permissions:
+      contents: write # emacs-builder commits casks via the contents API
     steps:
       - name: Checkout tap repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.live-check.outputs.tap_sha }}
           path: tap
+          persist-credentials: false
       - name: Download pre-built emacs-builder artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: emacs-builder-${{ runner.arch }}
           path: bin
       - name: Ensure emacs-builder is executable
         run: chmod +x bin/emacs-builder
       - name: Download livecheck-results.json artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: livecheck-results.json
           path: ./
       - name: Update casks
-        run: >-
-          bin/emacs-builder
-          cask --builds-repository jimeh/emacs-builds
-          update --templates-dir tap/templates
-          ${{ github.event.inputs.extraArgs }}
-          livecheck-results.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dryRun }}
+          EXTRA_ARGS: ${{ inputs.extraArgs }}
+        run: |
+          read -r -a extra_args <<< "${EXTRA_ARGS}"
+          # Dry run writes casks into the tap checkout instead of committing.
+          # Without an output directory emacs-builder commits through the
+          # contents API, so --output goes before any positional argument in
+          # extraArgs, and extraArgs may not override it.
+          output_args=()
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            output_args=(--output tap/Casks)
+            for arg in ${extra_args[@]+"${extra_args[@]}"}; do
+              if [[ "${arg}" =~ ^--?(o|output)(=|$) ]]; then
+                echo "::error::extraArgs cannot set --output in a dry run"
+                exit 1
+              fi
+            done
+          fi
+          bin/emacs-builder \
+            cask --builds-repository jimeh/emacs-builds \
+            update --templates-dir tap/templates \
+            ${output_args[@]+"${output_args[@]}"} \
+            ${extra_args[@]+"${extra_args[@]}"} \
+            livecheck-results.json
+      - name: Show cask changes (dry run)
+        if: ${{ inputs.dryRun }}
+        working-directory: tap
+        run: |
+          # Make new, untracked casks visible to git diff.
+          git add --intent-to-add .
+          git status --short
+          git diff --stat
+          git diff
+      - name: Upload rendered casks (dry run)
+        if: ${{ inputs.dryRun }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dry-run-casks
+          path: tap/Casks
+          if-no-files-found: error
+          retention-days: 3
 
   update-meta:
     runs-on: "macos-15"
-    needs: [update-casks]
+    needs: [live-check, update-casks]
     permissions:
-      contents: write
+      contents: write # git-auto-commit-action pushes to the meta branch
+    env:
+      # Keep brew bundle from auto-updating, which could rebase the copied
+      # tap and discard the dry run's rendered casks.
+      HOMEBREW_NO_AUTO_UPDATE: "1"
     steps:
-      - name: Checkout tap repository main branch
-        uses: actions/checkout@v4
+      # Real runs need main, which now has the casks update-casks committed.
+      # Dry runs use the revision update-casks rendered against, plus the
+      # rendered casks from its artifact.
+      - name: Checkout tap repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          ref: ${{ inputs.dryRun && needs.live-check.outputs.tap_sha || 'main' }}
           path: tap
+          persist-credentials: false
+      - name: Download rendered casks (dry run)
+        if: ${{ inputs.dryRun }}
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dry-run-casks
+          path: tap/Casks
       - name: Copy tap repository to homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
-          cp -av "${{ github.workspace }}/tap" \
+          cp -av "${GITHUB_WORKSPACE}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: Trust homebrew tap
         run: brew trust --tap jimeh/emacs-builds
-      - name: Checkout tap repository meta branch
-        uses: actions/checkout@v4
+      # git-auto-commit-action pushes using the persisted checkout credentials.
+      - name: Checkout tap repository meta branch # zizmor: ignore[artipacked]
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: meta
           path: meta
@@ -156,8 +235,16 @@ jobs:
       - name: Update meta files
         run: make update
         working-directory: meta
+      - name: Show meta changes (dry run)
+        if: ${{ inputs.dryRun }}
+        working-directory: meta
+        run: |
+          git add --intent-to-add .
+          git status --short
+          git diff --stat
       - name: commit and push changes to meta branch
-        uses: stefanzweifel/git-auto-commit-action@v5
+        if: ${{ !inputs.dryRun }}
+        uses: stefanzweifel/git-auto-commit-action@d0b01107b5db882071f96de5dd4b54961ea93f4c # v7.2.1
         with:
           commit_message: "chore(meta): update meta files"
           repository: meta
