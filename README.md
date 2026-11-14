@@ -72,5 +72,6 @@ Development tools are managed with [mise](https://mise.jdx.dev/):
   mise run actions:update
   ```
 
-The Update Casks workflow has a `dryRun` input which renders casks and meta
-files and prints the resulting changes, without committing or pushing anything.
+The Update Casks workflow has a `dryRun` input which renders casks from the
+dispatched ref, regenerates meta files from them, and prints the resulting
+changes, without committing or pushing anything.

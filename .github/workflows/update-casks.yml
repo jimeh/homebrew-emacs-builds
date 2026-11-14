@@ -1,6 +1,10 @@
 ---
 name: Update Casks
-concurrency: jimeh/homebrew-emacs-builds/update-casks
+concurrency:
+  # Dry runs use their own group so they never cancel a pending real run.
+  group: >-
+    jimeh/homebrew-emacs-builds/update-casks${{
+    inputs.dryRun && '-dry-run' || '' }}
 on:
   workflow_dispatch:
     inputs:
@@ -14,8 +18,9 @@ on:
         default: ""
       dryRun:
         description: >-
-          Dry run: render casks and meta files and show the changes, without
-          committing or pushing anything
+          Dry run: render casks from the dispatched ref, regenerate meta files
+          from them, and print the changes, without committing or pushing
+          anything
         type: boolean
         required: false
         default: false
@@ -75,7 +80,8 @@ jobs:
       - name: Checkout tap repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          # Dry runs preview the dispatched commit; real runs always use main.
+          ref: ${{ inputs.dryRun && github.sha || 'main' }}
           path: tap
           persist-credentials: false
       - name: Store tap Git SHA
@@ -146,9 +152,18 @@ jobs:
         run: |
           read -r -a extra_args <<< "${EXTRA_ARGS}"
           # Dry run writes casks into the tap checkout instead of committing.
+          # Without an output directory emacs-builder commits through the
+          # contents API, so --output goes before any positional argument in
+          # extraArgs, and extraArgs may not override it.
           output_args=()
           if [[ "${DRY_RUN}" == "true" ]]; then
             output_args=(--output tap/Casks)
+            for arg in ${extra_args[@]+"${extra_args[@]}"}; do
+              if [[ "${arg}" =~ ^--?(o|output)(=|$) ]]; then
+                echo "::error::extraArgs cannot set --output in a dry run"
+                exit 1
+              fi
+            done
           fi
           bin/emacs-builder \
             cask --builds-repository jimeh/emacs-builds \
@@ -160,22 +175,41 @@ jobs:
         if: ${{ inputs.dryRun }}
         working-directory: tap
         run: |
+          # Make new, untracked casks visible to git diff.
+          git add --intent-to-add .
           git status --short
           git diff --stat
           git diff
+      - name: Upload rendered casks (dry run)
+        if: ${{ inputs.dryRun }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dry-run-casks
+          path: tap/Casks
+          if-no-files-found: error
+          retention-days: 3
 
   update-meta:
     runs-on: "macos-15"
-    needs: [update-casks]
+    needs: [live-check, update-casks]
     permissions:
       contents: write # git-auto-commit-action pushes to the meta branch
     steps:
-      - name: Checkout tap repository main branch
+      # Real runs need main, which now has the casks update-casks committed.
+      # Dry runs use the revision update-casks rendered against, plus the
+      # rendered casks from its artifact.
+      - name: Checkout tap repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          ref: ${{ inputs.dryRun && needs.live-check.outputs.tap_sha || 'main' }}
           path: tap
           persist-credentials: false
+      - name: Download rendered casks (dry run)
+        if: ${{ inputs.dryRun }}
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dry-run-casks
+          path: tap/Casks
       - name: Copy tap repository to homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
@@ -199,6 +233,7 @@ jobs:
         if: ${{ inputs.dryRun }}
         working-directory: meta
         run: |
+          git add --intent-to-add .
           git status --short
           git diff --stat
       - name: commit and push changes to meta branch
