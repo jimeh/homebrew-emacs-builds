@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/suzuki-shunsuke/pinact/refs/heads/main/json-schema/pinact.json
+version: 3
+min_age:
+  value: 3
+  always: true
+files:
+  - pattern: .github/workflows/*.yml
+  - pattern: .github/workflows/*.yaml

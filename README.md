@@ -54,3 +54,23 @@ The following Casks are deprecated, and no longer updated:
 
 As of 2024-11-30, all builds include both Apple Silicon (arm64) and Intel
 (x86_64) artifacts.
+
+## Development
+
+Development tools are managed with [mise](https://mise.jdx.dev/):
+
+- Install tools:
+  ```
+  mise install
+  ```
+- Lint GitHub Actions workflows with actionlint, pinact and zizmor:
+  ```
+  mise run lint
+  ```
+- Update pinned GitHub Actions to their latest releases:
+  ```
+  mise run actions:update
+  ```
+
+The Update Casks workflow has a `dryRun` input which renders casks and meta
+files and prints the resulting changes, without committing or pushing anything.
