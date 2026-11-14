@@ -89,6 +89,10 @@ jobs:
         working-directory: tap
         run: |
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      # Update Homebrew before installing the tap, so brew update cannot
+      # fetch, fast-forward or rebase the tap away from the checked out SHA.
+      - name: Run brew update
+        run: brew update
       - name: Copy tap repository to homebrew tap
         run: |
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
@@ -96,8 +100,6 @@ jobs:
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
       - name: Trust homebrew tap
         run: brew trust --tap jimeh/emacs-builds
-      - name: Run brew update
-        run: brew update
       - name: brew livecheck (all casks)
         if: ${{ inputs.cask == '' }}
         shell: bash
@@ -194,6 +196,10 @@ jobs:
     needs: [live-check, update-casks]
     permissions:
       contents: write # git-auto-commit-action pushes to the meta branch
+    env:
+      # Keep brew bundle from auto-updating, which could rebase the copied
+      # tap and discard the dry run's rendered casks.
+      HOMEBREW_NO_AUTO_UPDATE: "1"
     steps:
       # Real runs need main, which now has the casks update-casks committed.
       # Dry runs use the revision update-casks rendered against, plus the
