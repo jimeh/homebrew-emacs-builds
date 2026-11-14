@@ -72,15 +72,19 @@ jobs:
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
           cp -av "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
+      - name: Trust homebrew tap
+        run: brew trust --tap jimeh/emacs-builds
       - name: Run brew update
         run: brew update
       - name: brew livecheck (all casks)
         if: ${{ github.event.inputs.cask == '' }}
+        shell: bash
         run: >-
           brew livecheck --json --quiet --tap jimeh/emacs-builds
           | tee livecheck-results.json
       - name: brew livecheck (specific cask)
         if: ${{ github.event.inputs.cask != '' }}
+        shell: bash
         run: >-
           brew livecheck --json --quiet
           jimeh/emacs-builds/${{ github.event.inputs.cask }}
@@ -139,6 +143,8 @@ jobs:
           mkdir -p "$(brew --repo)/Library/Taps/jimeh"
           cp -av "${{ github.workspace }}/tap" \
              "$(brew --repo)/Library/Taps/jimeh/homebrew-emacs-builds"
+      - name: Trust homebrew tap
+        run: brew trust --tap jimeh/emacs-builds
       - name: Checkout tap repository meta branch
         uses: actions/checkout@v4
         with:
